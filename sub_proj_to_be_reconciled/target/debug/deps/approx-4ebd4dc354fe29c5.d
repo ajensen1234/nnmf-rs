@@ -1,0 +1,11 @@
+/Users/kevincolkitt/nnmf/target/debug/deps/libapprox-4ebd4dc354fe29c5.rmeta: /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/lib.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/abs_diff_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/relative_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/ulps_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/macros.rs
+
+/Users/kevincolkitt/nnmf/target/debug/deps/libapprox-4ebd4dc354fe29c5.rlib: /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/lib.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/abs_diff_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/relative_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/ulps_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/macros.rs
+
+/Users/kevincolkitt/nnmf/target/debug/deps/approx-4ebd4dc354fe29c5.d: /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/lib.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/abs_diff_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/relative_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/ulps_eq.rs /Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/macros.rs
+
+/Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/lib.rs:
+/Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/abs_diff_eq.rs:
+/Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/relative_eq.rs:
+/Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/ulps_eq.rs:
+/Users/kevincolkitt/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/macros.rs:
