@@ -7,5 +7,9 @@ extern crate nalgebra as na;
 use na::DMatrix;
 
 fn main() {
-    let my_mat = load_csv::print_string_contents("./data/YA04/val/W_6_R.csv");
+    let path = "./data/YA04/val/W_6_R.csv";
+    match load_csv::print_string_contents(path) {
+        Ok(matrix) => println!("The Matrix: {:?}", matrix),
+        Err(e) => println!("The matrix didn't work :(: {:?}", e),
+    }
 }
