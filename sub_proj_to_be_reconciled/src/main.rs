@@ -29,11 +29,11 @@ fn alternating_leastsq_nnmf(matrix_to_factorize: DMatrix<f64>, num_synergies: us
 
     for iter in 0..num_iterations {
         let qr_w = QR::new(w.clone());
-        let b_w = qr_w.q().transpose() * matrix_to_factorize;
+        let b_w = qr_w.q().transpose() * matrix_to_factorize.clone();
         let r_w = qr_w.r();
 
         for i in 0..n {
-            let new_lst_sqr_col = r_w.pseudo_inverse(epsilon).unwrap() * b_w.column(i);;
+            let new_lst_sqr_col = r_w.clone().pseudo_inverse(epsilon).unwrap() * b_w.column(i);;
 
             h.set_column(i, &new_lst_sqr_col);
         }
@@ -53,7 +53,7 @@ fn alternating_leastsq_nnmf(matrix_to_factorize: DMatrix<f64>, num_synergies: us
 
         for j in 0..m {
             let tmp_col_h = b_h.column(j);
-            let new_lst_sqr_row = (r_h.pseudo_inverse(epsilon).unwrap() * b_h.column(j)).transpose();
+            let new_lst_sqr_row = (r_h.clone().pseudo_inverse(epsilon).unwrap() * b_h.column(j)).transpose();
 
             w.set_row(j, &new_lst_sqr_row)
         }
