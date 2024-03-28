@@ -1,5 +1,4 @@
 use nalgebra::{DMatrix, QR};
-
 pub fn alternating_leastsq_nnmf(
     matrix_to_factorize: DMatrix<f64>,
     num_synergies: usize,
@@ -7,11 +6,16 @@ pub fn alternating_leastsq_nnmf(
     let m = matrix_to_factorize.nrows();
     let n = matrix_to_factorize.ncols();
 
-    // TODO randomize
-    let mut w = DMatrix::<f64>::identity(m, num_synergies);
-    let mut h = DMatrix::<f64>::identity(num_synergies, n);
+    // Old method of initializing via identity matrices
+    // let mut w = DMatrix::<f64>::identity(m, num_synergies);
+    // let mut h = DMatrix::<f64>::identity(num_synergies, n).abs();
 
-    let num_iterations = 50;
+    // New method of initializing by random matrices.
+    // Need to add `rand` feature into nalgebra to enable this function
+    let mut w = DMatrix::<f64>::new_random(m, num_synergies).abs();
+    let mut h = DMatrix::<f64>::new_random(num_synergies, n).abs();
+
+    let num_iterations = 250;
     let epsilon = 1e-14;
 
     for _ in 0..num_iterations {
