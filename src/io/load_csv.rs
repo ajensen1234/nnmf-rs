@@ -4,7 +4,7 @@ use std::io;
 extern crate nalgebra as na;
 extern crate ndarray as np;
 use na::*;
-pub fn print_string_contents(fp: &str) -> Result<DMatrix<f64>, io::Error> {
+pub fn load_csv_matrix(fp: &str) -> Result<DMatrix<f64>, io::Error> {
     println!("We are in: {:?}", env::current_dir());
     println!("File Name {}", fp);
     let contents = fs::read_to_string(fp).expect("We should have been able to read the file");
