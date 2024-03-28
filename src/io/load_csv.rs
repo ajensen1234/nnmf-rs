@@ -4,7 +4,7 @@ use std::io;
 extern crate nalgebra as na;
 extern crate ndarray as np;
 use na::*;
-pub fn load_csv_matrix(fp: &str) -> Result<DMatrix<f64>, io::Error> {
+pub fn load_csv_matrix(fp: &str) -> DMatrix<f64> {
     println!("We are in: {:?}", env::current_dir());
     println!("File Name {}", fp);
     let contents = fs::read_to_string(fp).expect("We should have been able to read the file");
@@ -37,5 +37,5 @@ pub fn load_csv_matrix(fp: &str) -> Result<DMatrix<f64>, io::Error> {
 
     assert_eq!(vec_of_vecs[1][2], matrix[(1, 2)]);
 
-    return Ok(matrix);
+    matrix
 }

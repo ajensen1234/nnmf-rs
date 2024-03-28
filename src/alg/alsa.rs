@@ -1,13 +1,6 @@
-use nalgebra::linalg::QR;
-use nalgebra::DMatrix;
+use nalgebra::{DMatrix, QR};
 
-fn main() {
-    let a = DMatrix::identity(15, 15);
-
-    alternating_leastsq_nnmf(a, 2);
-}
-
-fn alternating_leastsq_nnmf(
+pub fn alternating_leastsq_nnmf(
     matrix_to_factorize: DMatrix<f64>,
     num_synergies: usize,
 ) -> (DMatrix<f64>, DMatrix<f64>) {
@@ -18,7 +11,7 @@ fn alternating_leastsq_nnmf(
     let mut w = DMatrix::<f64>::identity(m, num_synergies);
     let mut h = DMatrix::<f64>::identity(num_synergies, n);
 
-    let num_iterations = 3;
+    let num_iterations = 50;
     let epsilon = 1e-14;
 
     for _ in 0..num_iterations {
