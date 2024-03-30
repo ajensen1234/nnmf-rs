@@ -11,8 +11,8 @@ pub fn lee_seung_multiplicative_update_rule(
     let mut w = DMatrix::<f64>::new_random(m, num_synergies).abs();
     let mut h = DMatrix::<f64>::new_random(num_synergies, n).abs();
 
-    let num_iterations = 100000;
-    for _ in 0..num_iterations {
+    let mut i = 1;
+    while true {
         let b = w.transpose() * w.clone() * h.clone();
         let c = w.transpose() * matrix_to_factorize.clone();
 
@@ -23,8 +23,16 @@ pub fn lee_seung_multiplicative_update_rule(
         let d = w.clone() * h.clone() * h.transpose();
         let e = matrix_to_factorize.clone() * h.transpose();
 
+        let prev_w = w.clone();
         w.component_mul_assign(&e);
         w.component_div_assign(&d);
+
+        if prev_w == w {
+            println!("Convergence after {} iterations", i);
+            break
+        }
+        i += 1;
+
     }
     return (w, h);
 }
