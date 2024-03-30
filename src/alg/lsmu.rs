@@ -11,18 +11,19 @@ pub fn lee_seung_multiplicative_update_rule(
     let mut w = DMatrix::<f64>::new_random(m, num_synergies).abs();
     let mut h = DMatrix::<f64>::new_random(num_synergies, n).abs();
 
-    let num_iterations = 1000000;
+    println!("Orig W {}", w);
+    let num_iterations = 1000;
     for _ in 0..num_iterations {
-        // Can parallelize each of these
         let b = w.transpose() * w.clone() * h.clone();
         let c = w.transpose() * matrix_to_factorize.clone();
         let d = w.clone() * h.clone() * h.transpose();
         let e = matrix_to_factorize.clone() * h.transpose();
 
         // Can parallelize these implementations
-        // Could replace with in-place component-wise operations
-        let h = &h.component_mul(&c).component_div(&b);
-        let w = &w.component_mul(&e).component_div(&d);
+        h.component_mul_assign(&c);
+        h.component_div_assign(&b);
+        w.component_mul_assign(&e);
+        w.component_div_assign(&d);
     }
     return (w, h);
 }
