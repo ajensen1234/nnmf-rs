@@ -20,12 +20,9 @@ pub fn lee_seung_multiplicative_update_rule(
         let e = matrix_to_factorize.clone() * h.transpose();
 
         // Can parallelize these implementations
-        let h = hadamard_division(&h.component_mul(&c), &b);
-        let w = hadamard_division(&w.component_mul(&e), &d);
+        // Could replace with in-place component-wise operations
+        let h = &h.component_mul(&c).component_div(&b);
+        let w = &w.component_mul(&e).component_div(&d);
     }
     return (w, h);
-}
-
-fn hadamard_division(a: &DMatrix<f64>, b: &DMatrix<f64>) -> DMatrix<f64> {
-    a.zip_map(b, |a_elem, b_elem| a_elem / b_elem)
 }
