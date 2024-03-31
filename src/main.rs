@@ -4,8 +4,8 @@ pub mod synth_data;
 use crate::io::load_csv;
 use crate::io::write_csv::write_matrix_to_csv;
 
-extern crate nalgebra as na;
 use approx::relative_eq;
+use nalgebra as na;
 
 use alg::alsa::alternating_leastsq_nnmf;
 use alg::lsmu::lee_seung_multiplicative_update_rule;
