@@ -9,3 +9,4 @@ edition = "2021"
 nalgebra = {version = "0.32.4", features = ["rand"]}
 ndarray = "0.15.6"
 csv = "1.1"
+approx = "0.5.1"

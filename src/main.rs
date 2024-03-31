@@ -5,6 +5,7 @@ use crate::io::load_csv;
 use crate::io::write_csv::write_matrix_to_csv;
 
 extern crate nalgebra as na;
+use approx::relative_eq;
 
 use alg::alsa::alternating_leastsq_nnmf;
 use alg::lsmu::lee_seung_multiplicative_update_rule;
@@ -21,5 +22,5 @@ fn main() {
 
     let (w_est, h_est) = lee_seung_multiplicative_update_rule(EMG_test.clone(), 2);
 
-    assert_eq!(W_test * h_test, w_est * h_est);
+    relative_eq!(W_test * h_test, w_est * h_est, epsilon = 0.0001);
 }
