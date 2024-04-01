@@ -1,5 +1,6 @@
 use nalgebra::{DMatrix, QR, DVector,DMatrixSlice, Scalar};
 use ndarray::{ArrayView2, ArrayView1, arr2, Array1};
+use approx::relative_eq;
 
 pub fn lee_seung_multiplicative_update_rule(
     matrix_to_factorize: DMatrix<f64>,
@@ -27,7 +28,7 @@ pub fn lee_seung_multiplicative_update_rule(
         w.component_mul_assign(&e);
         w.component_div_assign(&d);
 
-        if prev_w == w {
+        if relative_eq!(prev_w, w, epsilon = 0.000001) {
             println!("Convergence after {} iterations", i);
             break
         }
