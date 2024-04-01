@@ -28,11 +28,14 @@ pub fn lee_seung_multiplicative_update_rule(
         w.component_mul_assign(&e);
         w.component_div_assign(&d);
 
-        if relative_eq!(prev_w, w, epsilon = 0.000001) {
+        if relative_eq!(prev_w, w, epsilon = 0.001) {
             println!("Convergence after {} iterations", i);
             break
         }
         i += 1;
+        if i % 10000 == 0 {
+            println!("Iteration: {}", i);
+        }
 
     }
     return (w, h);
