@@ -10,3 +10,8 @@ nalgebra = {version = "0.32.4", features = ["rand"]}
 ndarray = "0.15.6"
 csv = "1.1"
 approx = "0.5.1"
+wgpu = "0.14"
+env_logger = "0.9.1"
+pollster = "0.2.5"
+futures-intrusive = "0.4"
+bytemuck = { version = "1.12.1", features = ["derive"] }

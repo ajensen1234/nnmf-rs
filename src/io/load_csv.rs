@@ -2,17 +2,17 @@ use std::fs;
 extern crate nalgebra as na;
 extern crate ndarray as np;
 use na::*;
-pub fn load_csv_matrix(fp: &str) -> DMatrix<f64> {
+pub fn load_csv_matrix(fp: &str) -> DMatrix<f32> {
     let contents = fs::read_to_string(fp).expect("We should have been able to read the file");
     let vec_of_vecs: Vec<Vec<_>> = contents
         .lines()
         .map(|line| {
             line.split([','])
                 .map(|char| {
-                    if char.parse::<f64>().unwrap() < 0.0 {
+                    if char.parse::<f32>().unwrap() < 0.0 {
                         0.0
                     } else {
-                        char.parse::<f64>().unwrap()
+                        char.parse::<f32>().unwrap()
                     }
                 })
                 .collect()
