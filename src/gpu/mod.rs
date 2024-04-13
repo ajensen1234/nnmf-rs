@@ -1,2 +1,2 @@
-pub mod component_wise_mul;
+pub mod component_wise_mul_div;
 

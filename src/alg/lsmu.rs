@@ -1,7 +1,7 @@
 use nalgebra::{DMatrix, QR, DVector,DMatrixSlice, Scalar};
 use ndarray::{ArrayView2, ArrayView1, arr2, Array1};
 use approx::relative_eq;
-use crate::gpu::component_wise_mul::gpu_component_wise_mul;
+use crate::gpu::component_wise_mul_div::gpu_component_wise_mul_div;
 
 pub fn lee_seung_multiplicative_update_rule(
     matrix_to_factorize: DMatrix<f32>,
@@ -19,15 +19,13 @@ pub fn lee_seung_multiplicative_update_rule(
         let c = w.transpose() * matrix_to_factorize.clone();
 
         // Can parallelize these implementations
-        h.component_mul_assign(&c);
-        h.component_div_assign(&b);
+        h = pollster::block_on(gpu_component_wise_mul_div(h, c, b)).unwrap();
 
         let d = w.clone() * h.clone() * h.transpose();
         let e = matrix_to_factorize.clone() * h.transpose();
 
         let prev_w = w.clone();
-        w = pollster::block_on(gpu_component_wise_mul(w, e)).unwrap();
-        w.component_div_assign(&d);
+        w = pollster::block_on(gpu_component_wise_mul_div(w, e, d)).unwrap();
 
         if relative_eq!(prev_w, w, epsilon = 0.00001) {
             println!("Convergence after {} iterations", i);

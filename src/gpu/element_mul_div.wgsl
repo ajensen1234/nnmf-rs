@@ -24,11 +24,14 @@ var<storage, read_write> v_indices: DataBuf;
 
 @group(0)
 @binding(1)
-var<storage, read_write> v_indices_1: DataBuf;
+var<storage, read_write> v_indices_multiply: DataBuf;
+
+@group(0)
+@binding(2)
+var<storage, read_write> v_indices_divide: DataBuf;
 
 @compute
 @workgroup_size(1)
 fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
-    // TODO: a more interesting computation than this.
-    v_indices.data[global_id.x] = v_indices.data[global_id.x] * v_indices_1.data[global_id.x];
+    v_indices.data[global_id.x] = v_indices.data[global_id.x] * v_indices_multiply.data[global_id.x] / v_indices_divide.data[global_id.x];
 }

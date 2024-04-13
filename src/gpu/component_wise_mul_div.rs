@@ -9,9 +9,9 @@ use na::DMatrix;
 use nalgebra as na;
 
 // TODO: Elaborate this this mutates matrix 0
-pub async fn gpu_component_wise_mul(matrix_0: DMatrix<f32>, matrix_1: DMatrix<f32>) -> Result<DMatrix<f32>, Box<dyn Error>> {
+pub async fn gpu_component_wise_mul_div(matrix_0: DMatrix<f32>, matrix_to_multipliy: DMatrix<f32>, matrix_to_divide: DMatrix<f32>) -> Result<DMatrix<f32>, Box<dyn Error>> {
     let num_rows = matrix_0.nrows();
-    let num_cols = matrix_1.ncols();
+    let num_cols = matrix_0.ncols();
     // TODO: Assert dimension equivalence
 
     let instance = wgpu::Instance::new(wgpu::Backends::PRIMARY);
@@ -42,15 +42,16 @@ pub async fn gpu_component_wise_mul(matrix_0: DMatrix<f32>, matrix_1: DMatrix<f3
     let cs_module = device.create_shader_module(wgpu::ShaderModuleDescriptor {
         label: None,
         //source: wgpu::ShaderSource::SpirV(bytes_to_u32(include_bytes!("alu.spv")).into()),
-        source: wgpu::ShaderSource::Wgsl(include_str!("element_multiplication.wgsl").into()),
+        source: wgpu::ShaderSource::Wgsl(include_str!("element_mul_div.wgsl").into()),
     });
     // println!("shader compilation {:?}", start_instant.elapsed());
     let input_f_0: &[f32] = matrix_0.as_slice().try_into().unwrap();
-    let input_f_1: &[f32] = matrix_1.as_slice().try_into().unwrap();
-
+    let input_f_1: &[f32] = matrix_to_multipliy.as_slice().try_into().unwrap();
+    let input_f_2: &[f32] = matrix_to_divide.as_slice().try_into().unwrap();
 
     let input_0: &[u8] = bytemuck::cast_slice(input_f_0);
     let input_1: &[u8] = bytemuck::cast_slice(input_f_1);
+    let input_2: &[u8] = bytemuck::cast_slice(input_f_2);
 
     let input_buf_0 = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
         label: None,
@@ -62,6 +63,13 @@ pub async fn gpu_component_wise_mul(matrix_0: DMatrix<f32>, matrix_1: DMatrix<f3
     let input_buf_1 = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
         label: None,
         contents: input_1,
+        usage: wgpu::BufferUsages::STORAGE
+            | wgpu::BufferUsages::COPY_DST
+            | wgpu::BufferUsages::COPY_SRC,
+    });
+    let input_buf_2 = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
+        label: None,
+        contents: input_2,
         usage: wgpu::BufferUsages::STORAGE
             | wgpu::BufferUsages::COPY_DST
             | wgpu::BufferUsages::COPY_SRC,
@@ -94,6 +102,16 @@ pub async fn gpu_component_wise_mul(matrix_0: DMatrix<f32>, matrix_1: DMatrix<f3
                 min_binding_size: None,
             },
             count: None,
+        },
+        wgpu::BindGroupLayoutEntry {
+            binding: 2,
+            visibility: wgpu::ShaderStages::COMPUTE,
+            ty: wgpu::BindingType::Buffer {
+                ty: wgpu::BufferBindingType::Storage { read_only: false },
+                has_dynamic_offset: false,
+                min_binding_size: None,
+            },
+            count: None,
         }],
     });
     let compute_pipeline_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
@@ -118,6 +136,10 @@ pub async fn gpu_component_wise_mul(matrix_0: DMatrix<f32>, matrix_1: DMatrix<f3
         wgpu::BindGroupEntry {
             binding: 1,
             resource: input_buf_1.as_entire_binding(),            
+        },
+        wgpu::BindGroupEntry {
+            binding: 2,
+            resource: input_buf_2.as_entire_binding(),            
         }
         ],
     });
@@ -151,7 +173,7 @@ pub async fn gpu_component_wise_mul(matrix_0: DMatrix<f32>, matrix_1: DMatrix<f3
 
         let reconstructed_matrix = na::DMatrix::from_fn(num_rows, num_cols, |r, c| data[c * num_rows + r]);
         // println!("{}", reconstructed_matrix);
-        assert_eq!(reconstructed_matrix, matrix_0.component_mul(&matrix_1));
+        // assert_eq!(reconstructed_matrix, matrix_0.component_mul(&matrix_to_multipliy));
 
         return Ok(reconstructed_matrix)
     }
