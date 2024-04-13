@@ -1,7 +1,7 @@
+use crate::gpu::component_wise_mul_div::gpu_component_wise_mul_div;
 use approx::relative_eq;
 use nalgebra::{DMatrix, DMatrixSlice, DVector, Scalar, QR};
 use ndarray::{arr2, Array1, ArrayView1, ArrayView2};
-
 pub fn lee_seung_multiplicative_update_rule(
     matrix_to_factorize: DMatrix<f32>,
     num_synergies: usize,
