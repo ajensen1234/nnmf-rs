@@ -1,4 +1,7 @@
-use crate::gpu::component_wise_mul_div::gpu_component_wise_mul_div;
+use crate::gpu::component_wise_mul_div::{
+    gpu_component_wise_mul_div, prepare_gpu, run_compute_pipeline,
+};
+
 use approx::relative_eq;
 use nalgebra::{DMatrix, DMatrixSlice, DVector, Scalar, QR};
 use ndarray::{arr2, Array1, ArrayView1, ArrayView2};
@@ -9,6 +12,7 @@ pub fn lee_seung_multiplicative_update_rule(
     let m = matrix_to_factorize.nrows();
     let n = matrix_to_factorize.ncols();
 
+    old_way = false;
     let mut w = DMatrix::<f32>::new_random(m, num_synergies).abs();
     let mut h = DMatrix::<f32>::new_random(num_synergies, n).abs();
 
@@ -34,6 +38,15 @@ pub fn lee_seung_multiplicative_update_rule(
         if i % 10 == 0 {
             println!("Iteration: {}", i);
         }
+    }
+
+    while true {
+        let b = w.transpose() * w.clone() * h.clone();
+        let c = w.transpose() * matrix_to_factorize.clone();
+
+        // prepare the data coming from the GPU
+        let (dev1, queue1, pl1, bg1, in_buf1, out_buf1, buf_len1) =
+            pollster::block_on(prepare_gpu(h, c, b));
     }
     return (w, h);
 }

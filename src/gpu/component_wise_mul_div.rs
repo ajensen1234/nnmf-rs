@@ -1,5 +1,5 @@
-use std::time::Instant;
 use std::error::Error;
+use std::time::Instant;
 
 use wgpu::util::DeviceExt;
 
@@ -9,7 +9,12 @@ use na::DMatrix;
 use nalgebra as na;
 
 // TODO: Elaborate this this mutates matrix 0
-pub async fn gpu_component_wise_mul_div(matrix_0: DMatrix<f32>, matrix_to_multipliy: DMatrix<f32>, matrix_to_divide: DMatrix<f32>) -> Result<DMatrix<f32>, Box<dyn Error>> {
+// TODO: Prefer `?` over `.unwrap()` for better error handling (eventually)
+pub async fn gpu_component_wise_mul_div(
+    matrix_0: DMatrix<f32>,
+    matrix_to_multipliy: DMatrix<f32>,
+    matrix_to_divide: DMatrix<f32>,
+) -> Result<DMatrix<f32>, Box<dyn Error>> {
     let num_rows = matrix_0.nrows();
     let num_cols = matrix_0.ncols();
     // TODO: Assert dimension equivalence
@@ -83,36 +88,38 @@ pub async fn gpu_component_wise_mul_div(matrix_0: DMatrix<f32>, matrix_to_multip
 
     let bind_group_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
         label: None,
-        entries: &[wgpu::BindGroupLayoutEntry {
-            binding: 0,
-            visibility: wgpu::ShaderStages::COMPUTE,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Storage { read_only: false },
-                has_dynamic_offset: false,
-                min_binding_size: None,
+        entries: &[
+            wgpu::BindGroupLayoutEntry {
+                binding: 0,
+                visibility: wgpu::ShaderStages::COMPUTE,
+                ty: wgpu::BindingType::Buffer {
+                    ty: wgpu::BufferBindingType::Storage { read_only: false },
+                    has_dynamic_offset: false,
+                    min_binding_size: None,
+                },
+                count: None,
             },
-            count: None,
-        },
-        wgpu::BindGroupLayoutEntry {
-            binding: 1,
-            visibility: wgpu::ShaderStages::COMPUTE,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Storage { read_only: false },
-                has_dynamic_offset: false,
-                min_binding_size: None,
+            wgpu::BindGroupLayoutEntry {
+                binding: 1,
+                visibility: wgpu::ShaderStages::COMPUTE,
+                ty: wgpu::BindingType::Buffer {
+                    ty: wgpu::BufferBindingType::Storage { read_only: false },
+                    has_dynamic_offset: false,
+                    min_binding_size: None,
+                },
+                count: None,
             },
-            count: None,
-        },
-        wgpu::BindGroupLayoutEntry {
-            binding: 2,
-            visibility: wgpu::ShaderStages::COMPUTE,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Storage { read_only: false },
-                has_dynamic_offset: false,
-                min_binding_size: None,
+            wgpu::BindGroupLayoutEntry {
+                binding: 2,
+                visibility: wgpu::ShaderStages::COMPUTE,
+                ty: wgpu::BindingType::Buffer {
+                    ty: wgpu::BufferBindingType::Storage { read_only: false },
+                    has_dynamic_offset: false,
+                    min_binding_size: None,
+                },
+                count: None,
             },
-            count: None,
-        }],
+        ],
     });
     let compute_pipeline_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
         label: None,
@@ -129,18 +136,19 @@ pub async fn gpu_component_wise_mul_div(matrix_0: DMatrix<f32>, matrix_to_multip
     let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
         label: None,
         layout: &bind_group_layout,
-        entries: &[wgpu::BindGroupEntry {
-            binding: 0,
-            resource: input_buf_0.as_entire_binding(),
-        },
-        wgpu::BindGroupEntry {
-            binding: 1,
-            resource: input_buf_1.as_entire_binding(),            
-        },
-        wgpu::BindGroupEntry {
-            binding: 2,
-            resource: input_buf_2.as_entire_binding(),            
-        }
+        entries: &[
+            wgpu::BindGroupEntry {
+                binding: 0,
+                resource: input_buf_0.as_entire_binding(),
+            },
+            wgpu::BindGroupEntry {
+                binding: 1,
+                resource: input_buf_1.as_entire_binding(),
+            },
+            wgpu::BindGroupEntry {
+                binding: 2,
+                resource: input_buf_2.as_entire_binding(),
+            },
         ],
     });
 
@@ -172,11 +180,218 @@ pub async fn gpu_component_wise_mul_div(matrix_0: DMatrix<f32>, matrix_to_multip
         let data: &[f32] = bytemuck::cast_slice(data_raw);
         // println!("data: {:?}", &*data);
 
-        let reconstructed_matrix = na::DMatrix::from_fn(num_rows, num_cols, |r, c| data[c * num_rows + r]);
+        let reconstructed_matrix =
+            na::DMatrix::from_fn(num_rows, num_cols, |r, c| data[c * num_rows + r]);
         // println!("{}", reconstructed_matrix);
         // assert_eq!(reconstructed_matrix, matrix_0.component_mul(&matrix_to_multipliy));
 
-        return Ok(reconstructed_matrix)
+        return Ok(reconstructed_matrix);
     }
-    return Err("Could not complete GPU component wise multiplication".into())
+    return Err("Could not complete GPU component wise multiplication".into());
+}
+
+// TODO: Create a function that prepares all the values in the gpu
+// Returns: the device and queue so that the actual compute pass can be performed
+pub async fn prepare_gpu(
+    input_matrix: DMatrix<f32>,
+    multiply_matrix: DMatrix<f32>,
+    divide_matrix: DMatrix<f32>,
+) -> (
+    wgpu::Device,
+    wgpu::Queue,
+    wgpu::ComputePipeline,
+    wgpu::BindGroup,
+    wgpu::Buffer,
+    wgpu::Buffer,
+    u64,
+) {
+    let num_rows = input_matrix.nrows();
+    let num_cols = input_matrix.ncols();
+    // TODO: Assert dimension equivalence
+
+    let instance = wgpu::Instance::new(wgpu::Backends::PRIMARY);
+    let adapter = instance.request_adapter(&Default::default()).await.unwrap();
+    let features = adapter.features();
+    let (device, queue) = adapter
+        .request_device(
+            &wgpu::DeviceDescriptor {
+                label: None,
+                features: features & wgpu::Features::TIMESTAMP_QUERY,
+                limits: Default::default(),
+            },
+            None,
+        )
+        .await
+        .unwrap();
+    let query_set = if features.contains(wgpu::Features::TIMESTAMP_QUERY) {
+        Some(device.create_query_set(&wgpu::QuerySetDescriptor {
+            count: 2,
+            ty: wgpu::QueryType::Timestamp,
+            label: None,
+        }))
+    } else {
+        None
+    };
+
+    let start_instant = Instant::now();
+    let cs_module = device.create_shader_module(wgpu::ShaderModuleDescriptor {
+        label: None,
+        //source: wgpu::ShaderSource::SpirV(bytes_to_u32(include_bytes!("alu.spv")).into()),
+        source: wgpu::ShaderSource::Wgsl(include_str!("element_mul_div.wgsl").into()),
+    });
+    // println!("shader compilation {:?}", start_instant.elapsed());
+    let input_f_0: &[f32] = input_matrix.as_slice().try_into().unwrap();
+    let input_f_1: &[f32] = multiply_matrix.as_slice().try_into().unwrap();
+    let input_f_2: &[f32] = divide_matrix.as_slice().try_into().unwrap();
+
+    let input_0: &[u8] = bytemuck::cast_slice(input_f_0);
+    let input_1: &[u8] = bytemuck::cast_slice(input_f_1);
+    let input_2: &[u8] = bytemuck::cast_slice(input_f_2);
+
+    //Creating buffers
+    let input_buf_0 = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
+        label: None,
+        contents: input_0,
+        usage: wgpu::BufferUsages::STORAGE
+            | wgpu::BufferUsages::COPY_DST
+            | wgpu::BufferUsages::COPY_SRC,
+    });
+    let input_buf_1 = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
+        label: None,
+        contents: input_1,
+        usage: wgpu::BufferUsages::STORAGE
+            | wgpu::BufferUsages::COPY_DST
+            | wgpu::BufferUsages::COPY_SRC,
+    });
+    let input_buf_2 = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
+        label: None,
+        contents: input_2,
+        usage: wgpu::BufferUsages::STORAGE
+            | wgpu::BufferUsages::COPY_DST
+            | wgpu::BufferUsages::COPY_SRC,
+    });
+    let output_buf = device.create_buffer(&wgpu::BufferDescriptor {
+        label: None,
+        size: input_0.len() as u64,
+        usage: wgpu::BufferUsages::MAP_READ | wgpu::BufferUsages::COPY_DST,
+        mapped_at_creation: false,
+    });
+
+    let bind_group_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
+        label: None,
+        entries: &[
+            wgpu::BindGroupLayoutEntry {
+                binding: 0,
+                visibility: wgpu::ShaderStages::COMPUTE,
+                ty: wgpu::BindingType::Buffer {
+                    ty: wgpu::BufferBindingType::Storage { read_only: false },
+                    has_dynamic_offset: false,
+                    min_binding_size: None,
+                },
+                count: None,
+            },
+            wgpu::BindGroupLayoutEntry {
+                binding: 1,
+                visibility: wgpu::ShaderStages::COMPUTE,
+                ty: wgpu::BindingType::Buffer {
+                    ty: wgpu::BufferBindingType::Storage { read_only: false },
+                    has_dynamic_offset: false,
+                    min_binding_size: None,
+                },
+                count: None,
+            },
+            wgpu::BindGroupLayoutEntry {
+                binding: 2,
+                visibility: wgpu::ShaderStages::COMPUTE,
+                ty: wgpu::BindingType::Buffer {
+                    ty: wgpu::BufferBindingType::Storage { read_only: false },
+                    has_dynamic_offset: false,
+                    min_binding_size: None,
+                },
+                count: None,
+            },
+        ],
+    });
+    let compute_pipeline_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
+        label: None,
+        bind_group_layouts: &[&bind_group_layout],
+        push_constant_ranges: &[],
+    });
+    let pipeline = device.create_compute_pipeline(&wgpu::ComputePipelineDescriptor {
+        label: None,
+        layout: Some(&compute_pipeline_layout),
+        module: &cs_module,
+        entry_point: "main",
+    });
+
+    let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
+        label: None,
+        layout: &bind_group_layout,
+        entries: &[
+            wgpu::BindGroupEntry {
+                binding: 0,
+                resource: input_buf_0.as_entire_binding(),
+            },
+            wgpu::BindGroupEntry {
+                binding: 1,
+                resource: input_buf_1.as_entire_binding(),
+            },
+            wgpu::BindGroupEntry {
+                binding: 2,
+                resource: input_buf_2.as_entire_binding(),
+            },
+        ],
+    });
+
+    return (
+        device,
+        queue,
+        pipeline,
+        bind_group,
+        input_buf_0,
+        output_buf,
+        input_0.len() as u64,
+    );
+}
+
+pub async fn run_compute_pipeline(
+    device: wgpu::Device,
+    queue: wgpu::Queue,
+    pipeline: wgpu::ComputePipeline,
+    bind_group: wgpu::BindGroup,
+    in_buf: wgpu::Buffer,
+    out_buf: wgpu::Buffer,
+    buf_size: u64,
+) -> Result<Vec<f32>, Box<dyn Error>> {
+    // Start off with the compute pass
+    let mut encoder = device.create_command_encoder(&Default::default());
+    {
+        let mut cpass = encoder.begin_compute_pass(&Default::default());
+        cpass.set_pipeline(&pipeline);
+        cpass.set_bind_group(0, &bind_group, &[]);
+        cpass.dispatch_workgroups(256, 256, 1);
+    }
+
+    encoder.copy_buffer_to_buffer(&in_buf, 0, &out_buf, 0, buf_size);
+    queue.submit(Some(encoder.finish()));
+
+    let buf_slice = out_buf.slice(..);
+    let (sender, receiver) = futures_intrusive::channel::shared::oneshot_channel();
+    buf_slice.map_async(wgpu::MapMode::Read, move |v| sender.send(v).unwrap());
+    // println!("pre-poll {:?}", std::time::Instant::now());
+    device.poll(wgpu::Maintain::Wait);
+    // println!("post-poll {:?}", std::time::Instant::now());
+    if let Some(Ok(())) = receiver.receive().await {
+        let data_raw = buf_slice.get_mapped_range();
+        let data: Vec<f32> = bytemuck::cast_slice(&data_raw).to_vec();
+
+        // println!("data: {:?}", &*data);
+
+        //TODO: reconstruct the matrix outside of the gpu compute loop
+        // let reconstructed_matrix =
+        //     na::DMatrix::from_fn(num_rows, num_cols, |r, c| data[c * num_rows + r]);
+
+        return Ok(data);
+    }
+    return Err("Could not complete matrix multiplication".into());
 }
