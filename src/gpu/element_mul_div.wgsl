@@ -31,7 +31,7 @@ var<storage, read_write> v_indices_multiply: DataBuf;
 var<storage, read_write> v_indices_divide: DataBuf;
 
 @compute
-@workgroup_size(1)
+@workgroup_size(256)
 fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
     v_indices.data[global_id.x] = v_indices.data[global_id.x] * v_indices_multiply.data[global_id.x] / v_indices_divide.data[global_id.x];
 }

@@ -31,7 +31,7 @@ pub fn lee_seung_multiplicative_update_rule(
             break;
         }
         i += 1;
-        if i % 10000 == 0 {
+        if i % 10 == 0 {
             println!("Iteration: {}", i);
         }
     }

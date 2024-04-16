@@ -152,7 +152,8 @@ pub async fn gpu_component_wise_mul_div(matrix_0: DMatrix<f32>, matrix_to_multip
         let mut cpass = encoder.begin_compute_pass(&Default::default());
         cpass.set_pipeline(&pipeline);
         cpass.set_bind_group(0, &bind_group, &[]);
-        cpass.dispatch_workgroups(input_f_0.len() as u32, 1, 1);
+        //cpass.dispatch_workgroups(input_f_0.len() as u32, 1, 1);
+        cpass.dispatch_workgroups(256, 256, 1);
     }
     if let Some(query_set) = &query_set {
         encoder.write_timestamp(query_set, 1);

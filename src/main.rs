@@ -20,7 +20,7 @@ fn main() {
 
     // we want to create a test matrix
     let (W_test, h_test, EMG_test) =
-        synth_data::generate_test_data::generate_test_data(8, 3000, 4, false);
+        synth_data::generate_test_data::generate_test_data(8, 30, 4, false);
     //println!("W_test: {:?}", W_test);
     //println!("h_test: {:?}", h_test);
 
