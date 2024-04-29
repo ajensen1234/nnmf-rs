@@ -1,8 +1,19 @@
-// use crate::gpu::component_wise_mul_div::{
-//     gpu_component_wise_mul_div, prepare_gpu, run_compute_pipeline,
-// };
-use sandblast;
+use sandblast::buffer::GpuBuffer;
+use sandblast::shader::ComputeShader;
+use sandblast::matrix_serialization_utils::matrix_to_casted_array;
+use sandblast::device::GpuDevice;
+use bytemuck::{Pod, Zeroable, cast_slice};
 
+use pollster;
+use wgpu;
+
+#[repr(C)]
+#[derive(Clone, Copy, Pod, Zeroable)]
+pub struct MatrixMulMetadata {
+    num_rows: u32,
+    num_cols: u32,
+    to_tranpose: u32
+}
 use approx::relative_eq;
 use nalgebra::{DMatrix, DMatrixSlice, DVector, Scalar, QR};
 use ndarray::{arr2, Array1, ArrayView1, ArrayView2};
@@ -10,12 +21,45 @@ pub fn lee_seung_multiplicative_update_rule(
     matrix_to_factorize: DMatrix<f32>,
     num_synergies: usize,
 ) -> (DMatrix<f32>, DMatrix<f32>) {
-    let m = matrix_to_factorize.nrows();
-    let n = matrix_to_factorize.ncols();
+    let device = pollster::block_on(GpuDevice::new());
+
+    let num_rows = matrix_to_factorize.nrows();
+    let num_cols = matrix_to_factorize.ncols();
 
     let old_way = false;
-    let mut w = DMatrix::<f32>::new_random(m, num_synergies).abs();
-    let mut h = DMatrix::<f32>::new_random(num_synergies, n).abs();
+    let mut w = DMatrix::<f32>::new_random(num_rows, num_synergies).abs();
+    let mut h = DMatrix::<f32>::new_random(num_synergies, num_cols).abs();
+    println!("W {}", w);
+    println!("H {}", h);
+
+    let zeros_1 = DMatrix::<f32>::zeros(num_rows, num_cols);
+    let zeros_2 = DMatrix::<f32>::zeros(num_rows, num_cols);
+
+    let matrix_a = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&w), false, false);
+    let matrix_b = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&h), false, false);
+    let matrix_c = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros_1), false, false);
+    let output_matrix = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros_2), false, true);
+
+    let matrix_a_mul_metadata = [MatrixMulMetadata{num_rows: w.nrows() as u32, num_cols: w.ncols() as u32, to_tranpose: 0}];
+    let matrix_a_mul_metadata_casted: &[f32] = cast_slice(&matrix_a_mul_metadata);
+    let matrix_a_mul_metadata_gpu = GpuBuffer::<f32>::new(&device, matrix_a_mul_metadata_casted, true, false);
+
+    let matrix_b_mul_metadata = [MatrixMulMetadata{num_rows: h.nrows() as u32, num_cols: h.ncols() as u32, to_tranpose: 0}];
+    let matrix_b_mul_metadata_casted: &[f32] = cast_slice(&matrix_b_mul_metadata);
+    let matrix_b_mul_metadata_gpu = GpuBuffer::<f32>::new(&device, matrix_b_mul_metadata_casted, true, false);
+    // let matrix_to_multiply = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&DMatrix::<f32>::new_random(num_rows, num_cols).abs()));
+    // let matrix_to_divide = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&DMatrix::<f32>::new_random(num_rows, num_cols).abs()));
+
+    let shader = ComputeShader::<f32>::new(device, "src/gpu/matrix_mul_transpose.wgsl");
+
+    let buf_slice = matrix_c.buffer.slice(..);
+    let output_data = pollster::block_on(shader.run(&[matrix_a, matrix_b, matrix_c, matrix_a_mul_metadata_gpu, matrix_b_mul_metadata_gpu], (num_rows as u32, num_cols as u32, 1), &output_matrix));
+
+    let reconstructed_matrix = DMatrix::from_fn(num_rows, num_cols, |r, c| output_data[c * num_rows + r]);
+
+    assert_eq!(reconstructed_matrix , w.clone() * h.clone());
+
+    // let buf_slice = matrix_c.buffer.slice(..);
 
     // let mut i = 1;
     // while true {
