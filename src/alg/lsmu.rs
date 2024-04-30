@@ -3,9 +3,13 @@ use sandblast::shader::ComputeShader;
 use sandblast::matrix_serialization_utils::matrix_to_casted_array;
 use sandblast::device::GpuDevice;
 use bytemuck::{Pod, Zeroable, cast_slice};
+use futures::join;
+use approx::assert_relative_eq;
+
 
 use pollster;
 use wgpu;
+
 
 #[repr(C)]
 #[derive(Clone, Copy, Pod, Zeroable)]
@@ -17,53 +21,120 @@ pub struct MatrixMulMetadata {
 use approx::relative_eq;
 use nalgebra::{DMatrix, DMatrixSlice, DVector, Scalar, QR};
 use ndarray::{arr2, Array1, ArrayView1, ArrayView2};
-pub fn lee_seung_multiplicative_update_rule(
+pub async fn lee_seung_multiplicative_update_rule(
     matrix_to_factorize: DMatrix<f32>,
     num_synergies: usize,
 ) -> (DMatrix<f32>, DMatrix<f32>) {
+
+    let mut w = DMatrix::<f32>::new_random(matrix_to_factorize.nrows(), num_synergies).abs();
+    let mut h = DMatrix::<f32>::new_random(num_synergies, matrix_to_factorize.ncols()).abs();
+    println!("W {}", w);
+    println!("H {}", h);
+
+    let zeros = DMatrix::<f32>::zeros(matrix_to_factorize.nrows(), matrix_to_factorize.ncols());
+
+    // Prepare Device
     let device = pollster::block_on(GpuDevice::new());
 
-    let num_rows = matrix_to_factorize.nrows();
-    let num_cols = matrix_to_factorize.ncols();
+    // Prepare Shader
+    let three_matrix_mul_shader = ComputeShader::<f32>::new(&device, "src/gpu/three_matrix_mul.wgsl");
+    let two_matrix_mul_shader = ComputeShader::<f32>::new(&device, "src/gpu/matrix_mul_transpose.wgsl");
+    let element_wise_mul_div_shader = ComputeShader::<f32>::new(&device, "src/gpu/element_mul_div.wgsl");
 
-    let old_way = false;
-    let mut w = DMatrix::<f32>::new_random(num_rows, num_synergies).abs();
-    let mut h = DMatrix::<f32>::new_random(num_synergies, num_cols).abs();
-    println!("Matrix to Factorize {}", matrix_to_factorize);
-    println!("H transpose {}", h.transpose());
+    // Instantiate GPU Buffers
+    let gpu_w = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&w), false, false);
+    let gpu_h = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&h), false, false);
+    let gpu_a = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&matrix_to_factorize), false, false);
+    let gpu_b = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, false);
+    let gpu_c = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, false);
+    let gpu_d = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, false);
+    let gpu_e = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, false);    
 
+    // Buffers with map_read properties that can be copied back to the CPU
+    let gpu_output_0 = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
+    let gpu_output_1 = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
+    let gpu_output_2 = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
+    let gpu_output_3 = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
+    let gpu_output_4 = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
+    let gpu_output_5 = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
 
-    let zeros_1 = DMatrix::<f32>::zeros(num_rows, num_cols);
-    let zeros_2 = DMatrix::<f32>::zeros(num_rows, num_cols);
+    // Prepare metadata for multiplications
+    let w_t_metadata = [MatrixMulMetadata{num_rows: w.nrows() as u32, num_cols: w.ncols() as u32, to_tranpose: 1}];
+    let w_t_metadata_casted: &[f32] = cast_slice(&w_t_metadata);
+    let w_t_metadata_gpu = GpuBuffer::<f32>::new(&device, w_t_metadata_casted, true, false);
 
-    let matrix_a = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&matrix_to_factorize), false, false);
-    let matrix_b = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&matrix_to_factorize), false, false);
-    let matrix_c = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&matrix_to_factorize), false, false);
-    let matrix_d = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros_1), false, false);
-    let output_matrix = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros_2), false, true);
+    let w_metadata = [MatrixMulMetadata{num_rows: w.nrows() as u32, num_cols: w.ncols() as u32, to_tranpose: 0}];
+    let w_metadata_casted: &[f32] = cast_slice(&w_metadata);
+    let w_metadata_gpu = GpuBuffer::<f32>::new(&device, w_metadata_casted, true, false);
 
-    let matrix_a_mul_metadata = [MatrixMulMetadata{num_rows: num_rows as u32, num_cols: num_cols as u32, to_tranpose: 0}];
-    let matrix_a_mul_metadata_casted: &[f32] = cast_slice(&matrix_a_mul_metadata);
-    let matrix_a_mul_metadata_gpu = GpuBuffer::<f32>::new(&device, matrix_a_mul_metadata_casted, true, false);
+    let h_metadata = [MatrixMulMetadata{num_rows: h.nrows() as u32, num_cols: h.ncols() as u32, to_tranpose: 0}];
+    let h_metadata_casted: &[f32] = cast_slice(&h_metadata);
+    let h_metadata_gpu = GpuBuffer::<f32>::new(&device, h_metadata_casted, true, false);
 
-    let matrix_b_mul_metadata = [MatrixMulMetadata{num_rows: num_rows as u32, num_cols: num_cols as u32, to_tranpose: 0}];
-    let matrix_b_mul_metadata_casted: &[f32] = cast_slice(&matrix_b_mul_metadata);
-    let matrix_b_mul_metadata_gpu = GpuBuffer::<f32>::new(&device, matrix_b_mul_metadata_casted, true, false);
+    let h_t_metadata = [MatrixMulMetadata{num_rows: h.nrows() as u32, num_cols: h.ncols() as u32, to_tranpose: 1}];
+    let h_t_metadata_casted: &[f32] = cast_slice(&h_t_metadata);
+    let h_t_metadata_gpu = GpuBuffer::<f32>::new(&device, h_t_metadata_casted, true, false);
 
-    let matrix_c_mul_metadata = [MatrixMulMetadata{num_rows: num_rows as u32, num_cols: num_cols as u32, to_tranpose: 0}];
-    let matrix_c_mul_metadata_casted: &[f32] = cast_slice(&matrix_c_mul_metadata);
-    let matrix_c_mul_metadata_gpu = GpuBuffer::<f32>::new(&device, matrix_c_mul_metadata_casted, true, false);
+    let a_metadata = [MatrixMulMetadata{num_rows: matrix_to_factorize.nrows() as u32, num_cols: matrix_to_factorize.ncols() as u32, to_tranpose: 0}];
+    let a_metadata_casted: &[f32] = cast_slice(&a_metadata);
+    let a_metadata_gpu = GpuBuffer::<f32>::new(&device, a_metadata_casted, true, false);
 
-    let shader = ComputeShader::<f32>::new(device, "src/gpu/three_matrix_mul.wgsl");
+    let mut b_output_data = vec![];;
+    let mut c_output_data = vec![];;
 
-    let output_data = pollster::block_on(shader.run(&[matrix_a, matrix_b, matrix_c, matrix_d, matrix_a_mul_metadata_gpu, matrix_b_mul_metadata_gpu, matrix_c_mul_metadata_gpu], (num_rows as u32, num_cols as u32, 1), &output_matrix));
+    let b_mul_gpu_buffers = &[&gpu_w, &gpu_w, &gpu_h, &gpu_b, &w_t_metadata_gpu, &w_metadata_gpu, &h_metadata_gpu];
+    let c_mul_gpu_buffers = &[&gpu_w, &gpu_a, &gpu_c, &w_t_metadata_gpu, &a_metadata_gpu];
 
-    let reconstructed_matrix = DMatrix::from_fn(num_rows , num_cols, |r, c| output_data[c * num_rows + r]);
+    let combined_future = async {
+        (b_output_data, c_output_data) = join!(three_matrix_mul_shader.run(b_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), &gpu_output_0), two_matrix_mul_shader.run(c_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), &gpu_output_1));
+    };
 
-    assert_eq!(reconstructed_matrix, matrix_to_factorize.clone() * matrix_to_factorize.clone() * matrix_to_factorize.clone());
+    pollster::block_on(combined_future);
 
+    let reconstructed_b = DMatrix::from_fn(w.ncols() , h.ncols(), |r, c| b_output_data[c * matrix_to_factorize.nrows() + r]);
+    let reconstructed_c = DMatrix::from_fn(w.ncols() , h.ncols(), |r, c| c_output_data[c * matrix_to_factorize.nrows() + r]);
+
+    assert_eq!(reconstructed_b, w.clone().transpose() * w.clone() * h.clone());
+    assert_eq!(reconstructed_c, w.clone().transpose() * matrix_to_factorize.clone());
+
+    let output_data_h = pollster::block_on(element_wise_mul_div_shader.run(&[&gpu_h, &gpu_c, &gpu_b],  (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), &gpu_output_2));
+
+    let reconstructed_h = DMatrix::from_fn(h.nrows() , h.ncols(), |r, c| output_data_h[c * matrix_to_factorize.nrows() + r]);
+
+    assert_relative_eq!(reconstructed_h, h.component_mul(&reconstructed_c).component_div(&reconstructed_b), epsilon = 0.0001);
+
+    let mut d_output_data = vec![];;
+    let mut e_output_data = vec![];;
+
+    let d_mul_gpu_buffers = &[&gpu_w, &gpu_h, &gpu_h, &gpu_d, &w_metadata_gpu, &h_metadata_gpu, &h_t_metadata_gpu];
+    let e_mul_gpu_buffers = &[&gpu_a, &gpu_h, &gpu_e, &a_metadata_gpu, &h_t_metadata_gpu];
+
+    let combined_future = async {
+        (d_output_data, e_output_data) = join!(three_matrix_mul_shader.run(d_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), &gpu_output_3), two_matrix_mul_shader.run(e_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), &gpu_output_4));
+    };
+
+    pollster::block_on(combined_future);
+
+    let reconstructed_d = DMatrix::from_fn(w.nrows() , w.ncols(), |r, c| d_output_data[c * matrix_to_factorize.nrows() + r]);
+    let reconstructed_e = DMatrix::from_fn(w.nrows() , w.ncols(), |r, c| e_output_data[c * matrix_to_factorize.nrows() + r]);
+
+    assert_eq!(reconstructed_d, w.clone() * reconstructed_h.clone() * reconstructed_h.clone().transpose());
+    assert_eq!(reconstructed_e, matrix_to_factorize.clone() * reconstructed_h.clone().transpose());
+
+    let output_data_w = pollster::block_on(element_wise_mul_div_shader.run(&[&gpu_w, &gpu_e, &gpu_d],  (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), &gpu_output_5));
+
+    let reconstructed_w = DMatrix::from_fn(w.nrows() , w.ncols(), |r, c| output_data_w[c * matrix_to_factorize.nrows() + r]);
+
+    assert_relative_eq!(reconstructed_w, w.component_mul(&reconstructed_e).component_div(&reconstructed_d), epsilon = 0.0001);
     // let buf_slice = matrix_c.buffer.slice(..);
 
+    // Binding info hardcode
+    // Output buffer creation
+    // GPUDevice Ownership
+    // Copy output buffer hardcode
+    // Dispatch size and general reliance on matrix num rows/cols
+    // Abstract matrix creation/ops?
+    
     // let mut i = 1;
     // while true {
     //     let b = w.transpose() * w.clone() * h.clone();

@@ -10,6 +10,7 @@ use approx::relative_eq;
 
 use na::DMatrix;
 use nalgebra as na;
+use pollster;
 
 use alg::alsa::alternating_leastsq_nnmf;
 use alg::lsmu::lee_seung_multiplicative_update_rule;
@@ -20,12 +21,12 @@ fn main() {
 
     // we want to create a test matrix
     let (W_test, h_test, EMG_test) =
-        synth_data::generate_test_data::generate_test_data(4, 3, 3, false);
+        synth_data::generate_test_data::generate_test_data(4, 4, 4, false);
     //println!("W_test: {:?}", W_test);
     //println!("h_test: {:?}", h_test);
     println!("{}", EMG_test);
     let now = time::Instant::now();
-    let (w_est, h_est) = lee_seung_multiplicative_update_rule(EMG_test.clone(), 3);
+    let (w_est, h_est) = pollster::block_on(lee_seung_multiplicative_update_rule(EMG_test.clone(), 4));
     // let elapsed_time = now.elapsed();
     // let A_est = w_est * h_est;
     // if relative_eq!(matrix, A_est.clone(), epsilon = 0.0001) {
