@@ -34,16 +34,23 @@ var<storage, read_write> matrix_1: DataBuf;
 
 @group(0)
 @binding(2)
-var<storage, read_write> output_matrix: DataBuf;
+var<storage, read_write> matrix_2: DataBuf;
 
 @group(0)
 @binding(3)
-var<uniform> matrix_0_metadata: MatrixMulMetadata;
+var<storage, read_write> output_matrix: DataBuf;
 
 @group(0)
 @binding(4)
+var<uniform> matrix_0_metadata: MatrixMulMetadata;
+
+@group(0)
+@binding(5)
 var<uniform> matrix_1_metadata: MatrixMulMetadata;
 
+@group(0)
+@binding(6)
+var<uniform> matrix_2_metadata: MatrixMulMetadata;
 
 @compute
 @workgroup_size(1, 1, 1)
@@ -61,11 +68,42 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
     } else {
         matrix_0_col_boundary = i32(matrix_0_metadata.num_cols);
     };
+    var matrix_2_col_elem_idx: i32;
+
+    while (current_matrix_0_col < matrix_0_col_boundary) {
+        // Adds product of elements at (output_row, current_matrix_0_col) and (current_matrix_0_col, output_col) to new_val
+        if (matrix_2_metadata.to_transpose == 1) {
+            matrix_2_col_elem_idx = current_matrix_0_col * i32(matrix_2_metadata.num_rows) + i32(output_col);
+        } else {
+            matrix_2_col_elem_idx = i32(output_col * matrix_2_metadata.num_rows) + current_matrix_0_col;
+        };
+
+        let left_side_val = matrix_mul_output_elem(&matrix_0.data, &matrix_1.data, matrix_0_metadata, matrix_1_metadata, output_row, current_matrix_0_col);
+        new_val = new_val + left_side_val * matrix_2.data[matrix_2_col_elem_idx];
+        current_matrix_0_col += 1;
+    }
+
+    // Number of output rows is equal to number of rows of matrix 0
+    let idx = global_id.x + matrix_0_metadata.num_rows * global_id.y;
+    output_matrix.data[idx] = new_val;
+}
+
+fn matrix_mul_output_elem(matrix_0: ptr<storage, array<f32>>, matrix_1: ptr<storage, array<f32>>, matrix_0_metadata: MatrixMulMetadata, matrix_1_metadata: MatrixMulMetadata, output_row: u32, output_col: u32) -> f32 {
+    var output_elem_val: f32 = 0;
+    var current_matrix_0_col: i32 = 0;
+
+    var matrix_0_col_boundary: i32;
+
+    if (matrix_0_metadata.to_transpose == 1) {
+        matrix_0_col_boundary = i32(matrix_0_metadata.num_rows);
+    } else {
+        matrix_0_col_boundary = i32(matrix_0_metadata.num_cols);
+    };
     var matrix_0_row_elem_idx: i32;
     var matrix_1_col_elem_idx: i32;
 
     while (current_matrix_0_col < matrix_0_col_boundary) {
-        // Adds product of elements at (output_row, current_matrix_0_col) and (current_matrix_0_col, output_col) to new_val
+        // Adds product of elements at (output_row, current_matrix_0_col) and (current_matrix_0_col, output_col) to output_elem_val
         if (matrix_0_metadata.to_transpose == 1) {
             matrix_0_row_elem_idx = i32(output_row * matrix_0_metadata.num_rows) + current_matrix_0_col;
         } else {
@@ -78,11 +116,9 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
             matrix_1_col_elem_idx = i32(output_col * matrix_1_metadata.num_rows) + current_matrix_0_col;
         };
 
-        new_val = new_val + matrix_0.data[matrix_0_row_elem_idx] * matrix_1.data[matrix_1_col_elem_idx];
+        output_elem_val = output_elem_val + (*matrix_0)[matrix_0_row_elem_idx] * (*matrix_1)[matrix_1_col_elem_idx];
         current_matrix_0_col += 1;
     }
 
-    // Number of output rows is equal to number of rows of matrix 0
-    let idx = global_id.x + matrix_0_metadata.num_rows * global_id.y;
-    output_matrix.data[idx] = new_val;
+    return output_elem_val;
 }
