@@ -26,7 +26,7 @@ fn main() {
     //println!("h_test: {:?}", h_test);
     println!("{}", EMG_test);
     let now = time::Instant::now();
-    let (w_est, h_est) = pollster::block_on(lee_seung_multiplicative_update_rule(matrix, 4));
+    let (w_est, h_est) = pollster::block_on(lee_seung_multiplicative_update_rule(EMG_test.clone(), 4));
     // let elapsed_time = now.elapsed();
     // let A_est = w_est * h_est;
     // if relative_eq!(matrix, A_est.clone(), epsilon = 0.0001) {

@@ -5,6 +5,9 @@ use sandblast::device::GpuDevice;
 use bytemuck::{Pod, Zeroable, cast_slice};
 use futures::join;
 use approx::assert_relative_eq;
+use std::time::{Instant, Duration};
+use std::thread::sleep;
+
 
 
 use pollster;
@@ -79,16 +82,35 @@ pub async fn lee_seung_multiplicative_update_rule(
     let a_metadata_casted: &[f32] = cast_slice(&a_metadata);
     let a_metadata_gpu = GpuBuffer::<f32>::new(&device, a_metadata_casted, true, false);
 
+    let b_mul_gpu_buffers = [&gpu_w, &gpu_w, &gpu_h, &gpu_b, &w_t_metadata_gpu, &w_metadata_gpu, &h_metadata_gpu];
+    let b_mul_bind_group = three_matrix_mul_shader.bind_group_from_buffers(&b_mul_gpu_buffers);
+
+    let c_mul_gpu_buffers = [&gpu_w, &gpu_a, &gpu_c, &w_t_metadata_gpu, &a_metadata_gpu];
+    let c_mul_bind_group = two_matrix_mul_shader.bind_group_from_buffers(&c_mul_gpu_buffers);
+
+    let d_mul_gpu_buffers = [&gpu_w, &gpu_h, &gpu_h, &gpu_d, &w_metadata_gpu, &h_metadata_gpu, &h_t_metadata_gpu];
+    let d_mul_bind_group = three_matrix_mul_shader.bind_group_from_buffers(&d_mul_gpu_buffers);
+
+    let e_mul_gpu_buffers = [&gpu_a, &gpu_h, &gpu_e, &a_metadata_gpu, &h_t_metadata_gpu];
+    let e_mul_bind_group = two_matrix_mul_shader.bind_group_from_buffers(&e_mul_gpu_buffers);
+
+    let h_mul_div_buffers = [&gpu_h, &gpu_c, &gpu_b];
+    let h_mul_div_bind_group = element_wise_mul_div_shader.bind_group_from_buffers(&h_mul_div_buffers);
+
+    let w_mul_div_buffers = [&gpu_w, &gpu_e, &gpu_d];
+    let w_mul_div_bind_group = element_wise_mul_div_shader.bind_group_from_buffers(&w_mul_div_buffers);
+
     println!("Starting compute passes");
-    for i in 0..1000 {
+    let now = Instant::now();
+    let num_iterations = 1000;
+    for i in 0..num_iterations {
+        println!("{}", i);
         let mut b_output_data = vec![];;
         let mut c_output_data = vec![];;
 
-        let b_mul_gpu_buffers = &[&gpu_w, &gpu_w, &gpu_h, &gpu_b, &w_t_metadata_gpu, &w_metadata_gpu, &h_metadata_gpu];
-        let c_mul_gpu_buffers = &[&gpu_w, &gpu_a, &gpu_c, &w_t_metadata_gpu, &a_metadata_gpu];
-
+        
         let combined_future = async {
-            (b_output_data, c_output_data) = join!(three_matrix_mul_shader.run(b_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None), two_matrix_mul_shader.run(c_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
+            (b_output_data, c_output_data) = join!(three_matrix_mul_shader.run(&b_mul_bind_group, &b_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None), two_matrix_mul_shader.run(&c_mul_bind_group, &c_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
         };
 
         pollster::block_on(combined_future);
@@ -99,7 +121,7 @@ pub async fn lee_seung_multiplicative_update_rule(
         //assert_eq!(reconstructed_b, w.clone().transpose() * w.clone() * h.clone());
         //assert_eq!(reconstructed_c, w.clone().transpose() * matrix_to_factorize.clone());
 
-        let output_data_h = pollster::block_on(element_wise_mul_div_shader.run(&[&gpu_h, &gpu_c, &gpu_b],  (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
+        let output_data_h = pollster::block_on(element_wise_mul_div_shader.run(&h_mul_div_bind_group, &h_mul_div_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
 
         //let reconstructed_h = DMatrix::from_fn(h.nrows() , h.ncols(), |r, c| output_data_h[c * matrix_to_factorize.nrows() + r]);
 
@@ -108,11 +130,8 @@ pub async fn lee_seung_multiplicative_update_rule(
         let mut d_output_data = vec![];;
         let mut e_output_data = vec![];;
 
-        let d_mul_gpu_buffers = &[&gpu_w, &gpu_h, &gpu_h, &gpu_d, &w_metadata_gpu, &h_metadata_gpu, &h_t_metadata_gpu];
-        let e_mul_gpu_buffers = &[&gpu_a, &gpu_h, &gpu_e, &a_metadata_gpu, &h_t_metadata_gpu];
-
         let combined_future = async {
-            (d_output_data, e_output_data) = join!(three_matrix_mul_shader.run(d_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None), two_matrix_mul_shader.run(e_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
+            (d_output_data, e_output_data) = join!(three_matrix_mul_shader.run(&d_mul_bind_group, &d_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None), two_matrix_mul_shader.run(&e_mul_bind_group, &e_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
         };
 
         pollster::block_on(combined_future);
@@ -123,12 +142,13 @@ pub async fn lee_seung_multiplicative_update_rule(
         //assert_eq!(reconstructed_d, w.clone() * reconstructed_h.clone() * reconstructed_h.clone().transpose());
         //assert_eq!(reconstructed_e, matrix_to_factorize.clone() * reconstructed_h.clone().transpose());
 
-        let output_data_w = pollster::block_on(element_wise_mul_div_shader.run(&[&gpu_w, &gpu_e, &gpu_d],  (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
+        let output_data_w = pollster::block_on(element_wise_mul_div_shader.run(&w_mul_div_bind_group, &w_mul_div_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
 
         //let reconstructed_w = DMatrix::from_fn(w.nrows() , w.ncols(), |r, c| output_data_w[c * matrix_to_factorize.nrows() + r]);
 
         //assert_relative_eq!(reconstructed_w, w.component_mul(&reconstructed_e).component_div(&reconstructed_d), epsilon = 0.0001);
     }
+    println!("{} iterations took {}", num_iterations, now.elapsed().as_millis());
 
     // let buf_slice = matrix_c.buffer.slice(..);
 
