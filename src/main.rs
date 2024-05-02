@@ -27,27 +27,27 @@ fn main() {
     println!("{}", EMG_test);
     let now = time::Instant::now();
     let (w_est, h_est) = pollster::block_on(lee_seung_multiplicative_update_rule(EMG_test.clone(), 4));
-    // let elapsed_time = now.elapsed();
-    // let A_est = w_est * h_est;
-    // if relative_eq!(matrix, A_est.clone(), epsilon = 0.0001) {
-    //     println!("yay");
-    //     for i in 0..10 {
-    //         println!("{:?}", matrix[i]);
-    //         println!("{:?}", A_est[i]);
-    //         println!("-----------")
-    //     }
-    //     println!("{:?}", matrix[1]);
-    //     println!("{:?}", A_est[1]);
-    // } else {
-    //     println!("Nay");
-    //     for i in 0..10 {
-    //         println!("{:?}", matrix[i]);
-    //         println!("{:?}", A_est[i]);
-    //         println!("-----------")
-    //     }
-    // }
-    // println!(
-    //     "Running lee_seung..() took {} seconds.",
-    //     elapsed_time.as_millis() / 1000
-    // );
+    let elapsed_time = now.elapsed();
+    let A_est = w_est * h_est;
+    if relative_eq!(EMG_test.clone(), A_est, epsilon = 0.01) {
+         println!("yay");
+         for i in 0..10 {
+             println!("{:?}", matrix[i]);
+             println!("{:?}", EMG_test[i]);
+             println!("-----------")
+     }
+         println!("{:?}", matrix[1]);
+         println!("{:?}", EMG_test[1]);
+     } else {
+         println!("Nay");
+         for i in 0..10 {
+             println!("{:?}", matrix[i]);
+             println!("{:?}", EMG_test[i]);
+             println!("-----------")
+         }
+     }
+     println!(
+         "Running lee_seung..() took {} seconds.",
+         elapsed_time.as_millis() / 1000
+     );
 }

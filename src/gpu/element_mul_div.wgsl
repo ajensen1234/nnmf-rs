@@ -18,6 +18,12 @@ struct DataBuf {
     data: array<f32>,
 }
 
+struct MatrixMetadata {
+    num_rows: u32,
+    num_cols: u32,
+    to_transpose: u32,
+}
+
 @group(0)
 @binding(0)
 var<storage, read_write> v_indices: DataBuf;
@@ -30,8 +36,13 @@ var<storage, read_write> v_indices_multiply: DataBuf;
 @binding(2)
 var<storage, read_write> v_indices_divide: DataBuf;
 
+@group(0)
+@binding(3)
+var <uniform> v_indices_metadata: MatrixMetadata;
+
 @compute
-@workgroup_size(256)
+@workgroup_size(1, 1, 1)
 fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
-    v_indices.data[global_id.x] = v_indices.data[global_id.x] * v_indices_multiply.data[global_id.x] / v_indices_divide.data[global_id.x];
+    let idx = global_id.x + v_indices_metadata.num_rows * global_id.y;
+    v_indices.data[idx] = v_indices.data[idx] * v_indices_multiply.data[idx] / v_indices_divide.data[idx];
 }

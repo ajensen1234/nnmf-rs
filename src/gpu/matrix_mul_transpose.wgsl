@@ -83,6 +83,13 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
     }
 
     // Number of output rows is equal to number of rows of matrix 0
-    let idx = global_id.x + matrix_0_metadata.num_rows * global_id.y;
+    var num_rows_after_transpose: u32;
+    if (matrix_0_metadata.to_transpose) == 1 {
+        num_rows_after_transpose = matrix_0_metadata.num_cols;
+    } else {
+        num_rows_after_transpose = matrix_0_metadata.num_rows;
+    };
+
+    let idx = global_id.x + num_rows_after_transpose * global_id.y;
     output_matrix.data[idx] = new_val;
 }

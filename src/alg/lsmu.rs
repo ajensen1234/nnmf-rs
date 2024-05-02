@@ -4,7 +4,6 @@ use sandblast::matrix_serialization_utils::matrix_to_casted_array;
 use sandblast::device::GpuDevice;
 use bytemuck::{Pod, Zeroable, cast_slice};
 use futures::join;
-use approx::assert_relative_eq;
 use std::time::{Instant, Duration};
 use std::thread::sleep;
 
@@ -16,7 +15,7 @@ use wgpu;
 
 #[repr(C)]
 #[derive(Clone, Copy, Pod, Zeroable)]
-pub struct MatrixMulMetadata {
+pub struct MatrixMetadata {
     num_rows: u32,
     num_cols: u32,
     to_tranpose: u32
@@ -62,23 +61,23 @@ pub async fn lee_seung_multiplicative_update_rule(
     let gpu_output_5 = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
 
     // Prepare metadata for multiplications
-    let w_t_metadata = [MatrixMulMetadata{num_rows: w.nrows() as u32, num_cols: w.ncols() as u32, to_tranpose: 1}];
+    let w_t_metadata = [MatrixMetadata{num_rows: w.nrows() as u32, num_cols: w.ncols() as u32, to_tranpose: 1}];
     let w_t_metadata_casted: &[f32] = cast_slice(&w_t_metadata);
     let w_t_metadata_gpu = GpuBuffer::<f32>::new(&device, w_t_metadata_casted, true, false);
 
-    let w_metadata = [MatrixMulMetadata{num_rows: w.nrows() as u32, num_cols: w.ncols() as u32, to_tranpose: 0}];
+    let w_metadata = [MatrixMetadata{num_rows: w.nrows() as u32, num_cols: w.ncols() as u32, to_tranpose: 0}];
     let w_metadata_casted: &[f32] = cast_slice(&w_metadata);
     let w_metadata_gpu = GpuBuffer::<f32>::new(&device, w_metadata_casted, true, false);
 
-    let h_metadata = [MatrixMulMetadata{num_rows: h.nrows() as u32, num_cols: h.ncols() as u32, to_tranpose: 0}];
+    let h_metadata = [MatrixMetadata{num_rows: h.nrows() as u32, num_cols: h.ncols() as u32, to_tranpose: 0}];
     let h_metadata_casted: &[f32] = cast_slice(&h_metadata);
     let h_metadata_gpu = GpuBuffer::<f32>::new(&device, h_metadata_casted, true, false);
 
-    let h_t_metadata = [MatrixMulMetadata{num_rows: h.nrows() as u32, num_cols: h.ncols() as u32, to_tranpose: 1}];
+    let h_t_metadata = [MatrixMetadata{num_rows: h.nrows() as u32, num_cols: h.ncols() as u32, to_tranpose: 1}];
     let h_t_metadata_casted: &[f32] = cast_slice(&h_t_metadata);
     let h_t_metadata_gpu = GpuBuffer::<f32>::new(&device, h_t_metadata_casted, true, false);
 
-    let a_metadata = [MatrixMulMetadata{num_rows: matrix_to_factorize.nrows() as u32, num_cols: matrix_to_factorize.ncols() as u32, to_tranpose: 0}];
+    let a_metadata = [MatrixMetadata{num_rows: matrix_to_factorize.nrows() as u32, num_cols: matrix_to_factorize.ncols() as u32, to_tranpose: 0}];
     let a_metadata_casted: &[f32] = cast_slice(&a_metadata);
     let a_metadata_gpu = GpuBuffer::<f32>::new(&device, a_metadata_casted, true, false);
 
@@ -94,23 +93,43 @@ pub async fn lee_seung_multiplicative_update_rule(
     let e_mul_gpu_buffers = [&gpu_a, &gpu_h, &gpu_e, &a_metadata_gpu, &h_t_metadata_gpu];
     let e_mul_bind_group = two_matrix_mul_shader.bind_group_from_buffers(&e_mul_gpu_buffers);
 
-    let h_mul_div_buffers = [&gpu_h, &gpu_c, &gpu_b];
+    let h_mul_div_buffers = [&gpu_h, &gpu_c, &gpu_b, &h_metadata_gpu];
     let h_mul_div_bind_group = element_wise_mul_div_shader.bind_group_from_buffers(&h_mul_div_buffers);
 
-    let w_mul_div_buffers = [&gpu_w, &gpu_e, &gpu_d];
+    let w_mul_div_buffers = [&gpu_w, &gpu_e, &gpu_d, &w_metadata_gpu];
     let w_mul_div_bind_group = element_wise_mul_div_shader.bind_group_from_buffers(&w_mul_div_buffers);
+
+    let mut output_data_h: Vec<f32>  = vec![];
+    let mut output_data_w: Vec<f32>  = vec![];
+
+    let mut d_output_data: Vec<f32> = vec![];;
+    let mut e_output_data = vec![];;
+
+    let mut b_output_data = vec![];;
+    let mut c_output_data = vec![];;
+
+    let mut reconstructed_w = DMatrix::<f32>::new_random(1, 1);
+    let mut reconstructed_h = DMatrix::<f32>::new_random(1, 1);
+
+    let mut h_output_gpu_buffer = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
+    let mut w_output_gpu_buffer = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
 
     println!("Starting compute passes");
     let now = Instant::now();
-    let num_iterations = 1000;
-    for i in 0..num_iterations {
-        println!("{}", i);
-        let mut b_output_data = vec![];;
-        let mut c_output_data = vec![];;
 
+    let mut i = 0;
+    let convergence_check_frequency = 1000;
+   
+    while true {
+        i += 1;
+        println!("{}", i);
+
+
+        let b_output_gpu_buffer = None;
+        let c_output_gpu_buffer = None;
         
         let combined_future = async {
-            (b_output_data, c_output_data) = join!(three_matrix_mul_shader.run(&b_mul_bind_group, &b_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None), two_matrix_mul_shader.run(&c_mul_bind_group, &c_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
+            (b_output_data, c_output_data) = join!(three_matrix_mul_shader.run(&b_mul_bind_group, &b_mul_gpu_buffers, (h.nrows() as u32, h.ncols() as u32, 1), b_output_gpu_buffer), two_matrix_mul_shader.run(&c_mul_bind_group, &c_mul_gpu_buffers, (h.nrows() as u32, h.ncols() as u32, 1), c_output_gpu_buffer));
         };
 
         pollster::block_on(combined_future);
@@ -121,17 +140,29 @@ pub async fn lee_seung_multiplicative_update_rule(
         //assert_eq!(reconstructed_b, w.clone().transpose() * w.clone() * h.clone());
         //assert_eq!(reconstructed_c, w.clone().transpose() * matrix_to_factorize.clone());
 
-        let output_data_h = pollster::block_on(element_wise_mul_div_shader.run(&h_mul_div_bind_group, &h_mul_div_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
+        //let h_output_gpu_buffer  = None;
+        let mut h_output_gpu_buffer_option: Option<&GpuBuffer<f32>> = None;
+        let mut w_output_gpu_buffer_option: Option<&GpuBuffer<f32>> = None;
+        
+        if i % convergence_check_frequency == 0 {
+            h_output_gpu_buffer = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
+            h_output_gpu_buffer_option = Some(&h_output_gpu_buffer);
+
+            w_output_gpu_buffer = GpuBuffer::<f32>::new(&device, matrix_to_casted_array(&zeros.clone()), false, true);
+            w_output_gpu_buffer_option = Some(&w_output_gpu_buffer);
+        }
+
+        output_data_h = pollster::block_on(element_wise_mul_div_shader.run(&h_mul_div_bind_group, &h_mul_div_buffers, (h.nrows() as u32, h.ncols() as u32, 1), h_output_gpu_buffer_option));
 
         //let reconstructed_h = DMatrix::from_fn(h.nrows() , h.ncols(), |r, c| output_data_h[c * matrix_to_factorize.nrows() + r]);
 
         //assert_relative_eq!(reconstructed_h, h.component_mul(&reconstructed_c).component_div(&reconstructed_b), epsilon = 0.0001);
 
-        let mut d_output_data = vec![];;
-        let mut e_output_data = vec![];;
+        let d_output_gpu_bufer = None;
+        let e_output_gpu_bufer =None;
 
         let combined_future = async {
-            (d_output_data, e_output_data) = join!(three_matrix_mul_shader.run(&d_mul_bind_group, &d_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None), two_matrix_mul_shader.run(&e_mul_bind_group, &e_mul_gpu_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
+            (d_output_data, e_output_data) = join!(three_matrix_mul_shader.run(&d_mul_bind_group, &d_mul_gpu_buffers, (w.nrows() as u32, w.ncols() as u32, 1), d_output_gpu_bufer), two_matrix_mul_shader.run(&e_mul_bind_group, &e_mul_gpu_buffers, (w.nrows() as u32, w.ncols() as u32, 1), e_output_gpu_bufer));
         };
 
         pollster::block_on(combined_future);
@@ -142,14 +173,43 @@ pub async fn lee_seung_multiplicative_update_rule(
         //assert_eq!(reconstructed_d, w.clone() * reconstructed_h.clone() * reconstructed_h.clone().transpose());
         //assert_eq!(reconstructed_e, matrix_to_factorize.clone() * reconstructed_h.clone().transpose());
 
-        let output_data_w = pollster::block_on(element_wise_mul_div_shader.run(&w_mul_div_bind_group, &w_mul_div_buffers, (matrix_to_factorize.nrows() as u32, matrix_to_factorize.ncols() as u32, 1), None));
+        output_data_w = pollster::block_on(element_wise_mul_div_shader.run(&w_mul_div_bind_group, &w_mul_div_buffers, (w.nrows() as u32, w.ncols() as u32, 1), w_output_gpu_buffer_option));
 
         //let reconstructed_w = DMatrix::from_fn(w.nrows() , w.ncols(), |r, c| output_data_w[c * matrix_to_factorize.nrows() + r]);
 
         //assert_relative_eq!(reconstructed_w, w.component_mul(&reconstructed_e).component_div(&reconstructed_d), epsilon = 0.0001);
-    }
-    println!("{} iterations took {}", num_iterations, now.elapsed().as_millis());
 
+        if i % convergence_check_frequency == 0 {
+            reconstructed_w = DMatrix::from_fn(w.nrows() , w.ncols(), |r, c| output_data_w[c * matrix_to_factorize.nrows() + r]);
+            reconstructed_h =  DMatrix::from_fn(h.nrows() , h.ncols(), |r, c| output_data_h[c * h.nrows() + r]);
+
+            if relative_eq!(matrix_to_factorize, reconstructed_w.clone() * reconstructed_h.clone(), epsilon = 0.01) {
+                break
+            }
+        }
+    }
+
+
+    //let reconstructed_d = DMatrix::from_fn(w.nrows() , w.ncols(), |r, c| d_output_data[c * matrix_to_factorize.nrows() + r]);
+    //let reconstructed_e = DMatrix::from_fn(w.nrows() , w.ncols(), |r, c| e_output_data[c * matrix_to_factorize.nrows() + r]);
+
+    //let reconstructed_c = DMatrix::from_fn(h.nrows() , h.ncols(), |r, c| c_output_data[c * h.nrows() + r]);
+    //let reconstructed_b = DMatrix::from_fn(h.nrows() , h.ncols(), |r, c| b_output_data[c * h.nrows() + r]);
+
+
+    //println!("{}", output_data_h[0]);
+    //println!("H: {}", reconstructed_h);
+    //println!("W: {}", reconstructed_w);
+
+    //println!("D: {}", reconstructed_d);
+    //println!("E: {}", reconstructed_e);
+    //println!("C: {}", reconstructed_c);
+    //println!("B: {}", reconstructed_b);
+
+    //println!("A {}", matrix_to_factorize);
+    //println!("A * H^t {}", matrix_to_factorize.clone() * reconstructed_h.clone().transpose());
+
+    return (reconstructed_w.clone(), reconstructed_h.clone());
     // let buf_slice = matrix_c.buffer.slice(..);
 
     // Binding info hardcode
