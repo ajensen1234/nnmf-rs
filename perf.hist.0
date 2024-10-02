@@ -1,0 +1,1860 @@
++   95.07%     0.14%  nnmf-rs          nnmf-rs                           [.] _ZN7nnmf_rs3alg4lsmu36lee_seung_multiplicative_update_rule28_$u7b$$u7b$closure$u7d$$u7d$17h9f9c9a8fb28d413dE.llvm.2965241599609843649
++   94.04%     0.00%  nnmf-rs          nnmf-rs                           [.] nnmf_rs::main
++   93.48%     0.00%  nnmf-rs          nnmf-rs                           [.] _ZN3std2rt10lang_start28_$u7b$$u7b$closure$u7d$$u7d$17h2bd2a77a0e8038e2E.llvm.13464301561470426124
++   93.48%     0.00%  nnmf-rs          nnmf-rs                           [.] std::sys_common::backtrace::__rust_begin_short_backtrace
++   93.38%     0.00%  nnmf-rs          nnmf-rs                           [.] std::rt::lang_start_internal
++   93.13%     0.00%  nnmf-rs          nnmf-rs                           [.] pollster::block_on
++   92.46%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5029d8f
++   92.46%     0.00%  nnmf-rs          nnmf-rs                           [.] main
++   92.33%     0.00%  nnmf-rs          libc.so.6                         [.] __libc_start_main
++   92.20%     0.00%  nnmf-rs          nnmf-rs                           [.] _start
++   79.60%     0.00%  nnmf-rs          nnmf-rs                           [.] <futures_util::future::maybe_done::MaybeDone<Fut> as core::future::future::Future>::poll
++   73.00%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::queue_submit
++   72.58%     0.52%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::queue::<impl wgpu_core::global::Global<G>>::queue_submit
++   62.82%     0.00%  nnmf-rs          nnmf-rs                           [.] <futures_util::future::poll_fn::PollFn<F> as core::future::future::Future>::poll
++   59.09%     0.13%  nnmf-rs          nnmf-rs                           [.] <wgpu_hal::vulkan::Queue as wgpu_hal::Queue<wgpu_hal::vulkan::Api>>::submit
++   58.41%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3773bdf
++   58.41%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121bbd
++   57.34%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7261f47
++   54.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73ff446
++   51.78%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6eeb187
++   45.18%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e79eaf
++   40.42%     1.43%  nnmf-rs          libc.so.6                         [.] __sched_yield
++   40.42%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3dc1
++   37.64%     0.14%  nnmf-rs          [unknown]                         [.] 0xffffffff97600126
++   30.94%     0.34%  nnmf-rs          [unknown]                         [.] 0xffffffff975da859
++   29.07%     0.14%  nnmf-rs          [unknown]                         [.] 0xffffffff9654f33e
++   27.63%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9654f2ed
++   26.62%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975f28b3
++   16.78%     0.00%  nnmf-rs          nnmf-rs                           [.] <futures_util::future::poll_fn::PollFn<F> as core::future::future::Future>::poll
++   16.75%     0.20%  nnmf-rs          [unknown]                         [.] 0xffffffff975f229c
++   15.74%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9654e5bf
++   15.30%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu::ComputePass as core::ops::drop::Drop>::drop
++   15.30%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::command_encoder_end_compute_pass
++   15.30%     0.15%  nnmf-rs          nnmf-rs                           [.] <wgpu::backend::wgpu_core::ContextWgpuCore as wgpu::context::Context>::command_encoder_end_compute_pass
++   15.16%     0.34%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::compute::<impl wgpu_core::global::Global<G>>::command_encoder_run_compute_pass
++   12.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::command::<impl wgpu_hal::CommandEncoder<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::CommandEncoder>::begin_encoding
++   10.55%     0.07%  nnmf-rs          nnmf-rs                           [.] pollster::block_on
++   10.43%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9656bb2c
++   10.30%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e79886
++   10.08%     0.00%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu::ComputePass>
++    8.59%     0.13%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::resource::Device<A>::maintain
++    7.66%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff0e8
++    7.56%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dee73
++    7.36%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723b8f3
++    7.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff033
++    6.69%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffffffffffff
++    6.65%     0.14%  nnmf-rs          libc.so.6                         [.] clock_gettime
++    6.61%     0.19%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::life::LifetimeTracker<A>::triage_submissions
++    6.33%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d4c
++    5.24%     0.08%  nnmf-rs          [unknown]                         [.] 0xffffffff975f2263
++    5.22%     0.00%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu::ComputePass>
++    5.16%     5.16%  nnmf-rs          [vdso]                            [.] 0x0000000000000b03
++    5.16%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeb03
++    5.13%     5.13%  nnmf-rs          libc.so.6                         [.] 0x00000000001a104a
++    5.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723a8fd
++    5.13%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a104a
++    4.38%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975da865
++    3.82%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu::Instance as core::default::Default>::default
++    3.82%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::global::Global<G>::new
++    3.82%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::instance::Instance::new
++    3.46%     0.14%  nnmf-rs          [unknown]                         [.] 0xffffffff9654be9c
++    2.92%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::instance::<impl wgpu_hal::Instance<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Instance>::init
++    2.79%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96586cb2
++    2.52%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::command::<impl wgpu_hal::CommandEncoder<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::CommandEncoder>::end_encoding
++    2.39%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121ca4
++    2.33%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::CommandEncoder<A>::open
++    2.30%     2.30%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2b3d
++    2.16%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96460310
++    2.16%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975df589
++    2.10%     1.07%  nnmf-rs          libc.so.6                         [.] cfree
++    2.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723a87e
++    1.91%     0.61%  nnmf-rs          libc.so.6                         [.] malloc
++    1.84%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::instance::<impl wgpu_hal::vulkan::Instance>::desired_extensions
++    1.84%     0.00%  nnmf-rs          nnmf-rs                           [.] ash::prelude::read_into_uninitialized_vector
++    1.84%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] vkEnumerateInstanceExtensionProperties
++    1.84%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c935f
++    1.83%     1.83%  nnmf-rs          [unknown]                         [k] 0xffffffff975df488
++    1.80%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6eeb1a4
++    1.66%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee3ab5
++    1.57%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::life::LifetimeTracker<A>::triage_suspected
++    1.57%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff97600ba7
++    1.57%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975e2693
++    1.57%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73fefd9
++    1.56%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff964cb4f9
++    1.56%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96811cfd
++    1.56%     1.56%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e68938
++    1.56%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7268938
++    1.55%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c509012d
++    1.55%     0.00%  nnmf-rs          libc.so.6                         [.] _dl_catch_error
++    1.55%     0.00%  nnmf-rs          libc.so.6                         [.] _dl_catch_exception
++    1.50%     0.00%  nnmf-rs          libc.so.6                         [.] dlopen
++    1.50%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c509063b
++    1.50%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c546034d
++    1.50%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96811a1e
++    1.41%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965613aa
++    1.41%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545ff99
++    1.36%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e7973b
++    1.35%     1.35%  nnmf-rs          libc.so.6                         [.] 0x00000000001a0aca
++    1.35%     0.00%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<alloc::vec::drain::Drain<wgpu_core::device::life::ActiveSubmission<wgpu_hal::vulkan::Api>>>
++    1.35%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a0aca
++    1.35%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::CommandEncoder<A>::close
++    1.31%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu::Device::create_bind_group
++    1.31%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::device_create_bind_group
++    1.31%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu::backend::wgpu_core::ContextWgpuCore as wgpu::context::Context>::device_create_bind_group
++    1.31%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::global::<impl wgpu_core::global::Global<G>>::device_create_bind_group
++    1.29%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968113bb
++    1.28%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ea3ff
++    1.28%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71cf2a7
++    1.24%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c1ea2
++    1.24%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::resource::Device<A>::create_bind_group
++    1.24%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de8591
++    1.23%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de8a40
++    1.23%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu_core::device::resource::Device<A> as core::ops::drop::Drop>::drop
++    1.22%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::CommandAllocator<A>::dispose
++    1.22%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl wgpu_hal::Device<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Device>::destroy_command_encoder
++    1.18%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu_hal::gles::egl::Instance as wgpu_hal::Instance<wgpu_hal::gles::Api>>::init
++    1.16%     0.28%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::device::life::ResourceMaps<wgpu_hal::vulkan::Api>>
++    1.16%     1.16%  nnmf-rs          [unknown]                         [k] 0xffffffff975f2729
++    1.15%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965613d2
++    1.15%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a48b0
++    1.15%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e05d3
++    1.14%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5460bad
++    1.14%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] vkAllocateCommandBuffers
++    1.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7116266
++    1.08%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] vkCreateInstance
++    1.08%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c3fdf
++    1.08%     0.00%  nnmf-rs          libVkLayer_MESA_device_select.so  [.] 0x00007a05c368b616
++    1.08%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52bd6ea
++    1.08%     0.07%  nnmf-rs          [unknown]                         [.] 0xffffffff9656bb01
++    1.01%     1.01%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d39
++    1.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d39
++    1.00%     0.06%  nnmf-rs          [unknown]                         [.] 0xffffffff9656138a
++    0.93%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968761f4
++    0.93%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96875e61
++    0.93%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9683eeb7
++    0.93%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9681028c
++    0.93%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9681008c
++    0.92%     0.00%  nnmf-rs          nnmf-rs                           [.] nnmf_rs::io::load_csv::load_csv_matrix
++    0.92%     0.00%  nnmf-rs          nnmf-rs                           [.] <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter
++    0.92%     0.00%  nnmf-rs          nnmf-rs                           [.] <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::next
++    0.90%     0.35%  nnmf-rs          [unknown]                         [.] 0xffffffff965612af
++    0.87%     0.87%  nnmf-rs          [unknown]                         [k] 0xffffffff97564597
++    0.87%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9683d8a1
++    0.87%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723c85d
++    0.83%     0.70%  nnmf-rs          nnmf-rs                           [.] hashbrown::map::HashMap<K,V,S,A>::retain
++    0.82%     0.82%  nnmf-rs          [unknown]                         [k] 0xffffffff975da85d
++    0.82%     0.07%  nnmf-rs          nnmf-rs                           [.] alloc::sync::Arc<T,A>::drop_slow
++    0.82%     0.82%  nnmf-rs          [unknown]                         [k] 0xffffffff97704104
++    0.81%     0.81%  nnmf-rs          [unknown]                         [k] 0xffffffff975f28ba
++    0.80%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b716d408
++    0.79%     0.00%  nnmf-rs          nnmf-rs                           [.] std::io::stdio::_print
++    0.79%     0.00%  nnmf-rs          nnmf-rs                           [.] <&std::io::stdio::Stdout as std::io::Write>::write_fmt
++    0.79%     0.00%  nnmf-rs          nnmf-rs                           [.] core::fmt::write
++    0.77%     0.18%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl wgpu_hal::Device<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Device>::create_bind_group
++    0.77%     0.77%  nnmf-rs          [unknown]                         [k] 0xffffffff97600128
++    0.76%     0.76%  nnmf-rs          [unknown]                         [k] 0xffffffff965613b1
++    0.75%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c54634e7
++    0.75%     0.07%  nnmf-rs          [unknown]                         [.] 0xffffffff9655bb55
++    0.75%     0.75%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f36561
++    0.75%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7336561
++    0.74%     0.74%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2b1f
++    0.73%     0.73%  nnmf-rs          [unknown]                         [k] 0xffffffff975f226d
++    0.70%     0.70%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3f52
++    0.70%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3f52
++    0.70%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975f2206
+     0.68%     0.25%  nnmf-rs          nnmf-rs                           [.] _ZN102_$LT$core..iter..adapters..map..Map$LT$I$C$F$GT$$u20$as$u20$core..iter..traits..iterator..Iterator$GT$4next17h3e0df8bd27482ca4E.llvm.5899648823726341635
++    0.68%     0.00%  nnmf-rs          nnmf-rs                           [.] <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter
++    0.68%     0.68%  nnmf-rs          [unknown]                         [k] 0xffffffff976001b8
+     0.68%     0.21%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::compute::State<A>::flush_states
++    0.67%     0.67%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bb08
++    0.67%     0.67%  nnmf-rs          [unknown]                         [k] 0xffffffff965613d5
++    0.67%     0.67%  nnmf-rs          [unknown]                         [k] 0xffffffff9656125e
++    0.62%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e9583
++    0.62%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71df930
++    0.62%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dee89
++    0.62%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545e210
++    0.62%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73ff406
++    0.62%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d02
++    0.61%     0.61%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bb36
++    0.61%     0.00%  nnmf-rs          libexpat.so.1.8.7                 [.] XML_ParseBuffer
++    0.61%     0.00%  nnmf-rs          libexpat.so.1.8.7                 [.] 0x00007a05c4e684e7
++    0.61%     0.00%  nnmf-rs          libexpat.so.1.8.7                 [.] 0x00007a05c4e7293d
++    0.61%     0.61%  nnmf-rs          [unknown]                         [k] 0xffffffff9654f340
++    0.61%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee48e1
++    0.60%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9663150f
++    0.59%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::gles::egl::Inner::create
++    0.59%     0.00%  nnmf-rs          libEGL.so.1.1.0                   [.] eglQueryString
++    0.59%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::instance::<impl wgpu_core::global::Global<G>>::request_adapter
++    0.59%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu::Instance::request_adapter
++    0.59%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::instance_request_adapter
++    0.56%     0.56%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff0e0
++    0.56%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff0e0
++    0.55%     0.55%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bb2f
++    0.55%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7261531
++    0.55%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7222993
++    0.55%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73e98fc
+     0.55%     0.13%  nnmf-rs          nnmf-rs                           [.] <wgpu_core::binding_model::BindGroup<A> as core::ops::drop::Drop>::drop
++    0.55%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3773bb9
++    0.54%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f4da
++    0.54%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6f7e3c3
++    0.54%     0.54%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3dc2
++    0.54%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3dc2
++    0.54%     0.54%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d23
++    0.54%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d23
++    0.54%     0.54%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d35
++    0.54%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d35
++    0.54%     0.00%  nnmf-rs          nnmf-rs                           [.] <std::io::Write::write_fmt::Adapter<T> as core::fmt::Write>::write_str
++    0.54%     0.00%  nnmf-rs          nnmf-rs                           [.] <std::io::stdio::StdoutLock as std::io::Write>::write_all
++    0.54%     0.00%  nnmf-rs          nnmf-rs                           [.] std::io::buffered::bufwriter::BufWriter<W>::flush_buf
++    0.54%     0.00%  nnmf-rs          libc.so.6                         [.] write
++    0.50%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::instance::<impl wgpu_hal::Instance<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Instance>::enumerate_adapters
++    0.50%     0.00%  nnmf-rs          nnmf-rs                           [.] ash::prelude::read_into_uninitialized_vector
++    0.50%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] vkEnumeratePhysicalDevices
++    0.50%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::instance::<impl wgpu_core::global::Global<G>>::request_adapter::gather
+     0.49%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c1ed9
+     0.49%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] vk_icdNegotiateLoaderICDInterfaceVersion
+     0.48%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b720dfe4
+     0.48%     0.00%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::track::Tracker<wgpu_hal::vulkan::Api>>
+     0.48%     0.48%  nnmf-rs          [unknown]                         [k] 0xffffffff9654be9f
+     0.47%     0.14%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::CommandBuffer<A>::drain_barriers
+     0.47%     0.47%  nnmf-rs          [unknown]                         [k] 0xffffffff96558d18
+     0.47%     0.47%  nnmf-rs          [unknown]                         [k] 0xffffffff97704109
+     0.47%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3773dfb
+     0.47%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b711dd76
+     0.47%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e6dc2
+     0.47%     0.47%  nnmf-rs          [unknown]                         [k] 0xffffffff96630a65
+     0.46%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5099ee7
+     0.46%     0.00%  nnmf-rs          libEGL.so.1.1.0                   [.] 0x00007a05c366521d
+     0.46%     0.00%  nnmf-rs          libEGL.so.1.1.0                   [.] 0x00007a05c3664a88
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b284e6cc
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2833a92
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28a4e74
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28a3182
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28a343b
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28ad7fe
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28ac77a
+     0.46%     0.00%  nnmf-rs          libnvidia-egl-wayland.so.1.1.13   [.] loadEGLExternalPlatform
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2848edc
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2833aa7
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28aee95
+     0.46%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2835b8a
+     0.45%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e8891
+     0.44%     0.33%  nnmf-rs          nnmf-rs                           [.] core::num::dec2flt::<impl core::str::traits::FromStr for f32>::from_str
+     0.42%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::Tracker<A>::set_size
+     0.42%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e0253
+     0.41%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7221446
+     0.41%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73ff44e
+     0.41%     0.41%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d37
+     0.41%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d37
+     0.41%     0.07%  nnmf-rs          nnmf-rs                           [.] gpu_descriptor::allocator::DescriptorAllocator<P,S>::free
+     0.41%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl wgpu_hal::Device<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Device>::destroy_bind_group
+     0.41%     0.07%  nnmf-rs          nnmf-rs                           [.] <smallvec::SmallVec<A> as core::iter::traits::collect::Extend<<A as smallvec::Array>::Item>>::extend
+     0.41%     0.41%  nnmf-rs          [unknown]                         [k] 0xffffffff96549eb4
+     0.41%     0.41%  nnmf-rs          [unknown]                         [k] 0xffffffff9760014b
+     0.41%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b726863f
+     0.41%     0.41%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d32
+     0.41%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d32
+     0.41%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::CommandEncoder<A>::close_and_swap
+     0.41%     0.00%  nnmf-rs          nnmf-rs                           [.] _ZN5alloc7raw_vec11finish_grow17h7012bb586e2cfbb2E.llvm.11614525847464336391
+     0.41%     0.41%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d3b
+     0.41%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d3b
+     0.41%     0.41%  nnmf-rs          [unknown]                         [k] 0xffffffff9654bf01
+     0.40%     0.40%  nnmf-rs          [unknown]                         [k] 0xffffffff96561277
+     0.40%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9656125b
+     0.38%     0.00%  nnmf-rs          nnmf-rs                           [.] <nalgebra::base::matrix::Matrix<T,R,C,S> as core::fmt::Display>::fmt
+     0.38%     0.38%  nnmf-rs          libc.so.6                         [.] 0x00000000000a285b
+     0.38%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a285b
+     0.37%     0.37%  nnmf-rs          libc.so.6                         [.] 0x0000000000198666
+     0.37%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3774262
+     0.37%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3754bf3
+     0.37%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c37515ad
+     0.37%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c377757a
+     0.37%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5198666
+     0.37%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13f7f08
+     0.37%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13fdc3b
+     0.37%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13ff6b5
+     0.37%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13fcebc
+     0.36%     0.36%  nnmf-rs          [unknown]                         [k] 0xffffffff96460317
+     0.35%     0.35%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::compute::State<A>::is_ready
+     0.35%     0.35%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f34fc2
+     0.35%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121cd7
+     0.35%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334fc2
+     0.35%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3728012
+     0.35%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c37826a1
+     0.35%     0.00%  nnmf-rs          nnmf-rs                           [.] gpu_descriptor::allocator::DescriptorBucket<P>::free
+     0.35%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl gpu_descriptor_types::device::DescriptorDevice<ash::vk::definitions::DescriptorSetLayout,ash::vk::definitions::DescriptorPool,ash::vk::definitions::DescriptorSet> for wgpu_hal::vulkan::DeviceShared>::dealloc_descriptor_sets
+     0.35%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71162ad
+     0.35%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5088499
+     0.35%     0.35%  nnmf-rs          [unknown]                         [k] 0xffffffff975f220c
+     0.34%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2848863
+     0.34%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2843231
+     0.34%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b14029ef
+     0.34%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b140286c
+     0.34%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13e7a06
+     0.34%     0.34%  nnmf-rs          libc.so.6                         [.] pthread_rwlock_unlock
+     0.34%     0.00%  nnmf-rs          libc.so.6                         [.] syscall
+     0.34%     0.34%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dddcdc
+     0.34%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ddcdc
+     0.34%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff975f2723
+     0.34%     0.07%  nnmf-rs          nnmf-rs                           [.] gpu_descriptor::allocator::DescriptorAllocator<P,S>::allocate
+     0.34%     0.34%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f2dbb
+     0.34%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df2dbb
+     0.34%     0.34%  nnmf-rs          [unknown]                         [k] 0xffffffff96558102
+     0.34%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ddc46
+     0.34%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::command::<impl wgpu_hal::CommandEncoder<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::CommandEncoder>::transition_buffers
+     0.34%     0.34%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000aeb18b
+     0.34%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6eeb18b
+     0.33%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968d1f49
+     0.33%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e093cc
+     0.33%     0.33%  nnmf-rs          [unknown]                         [k] 0xffffffff9654f2ee
+     0.33%     0.07%  nnmf-rs          libc.so.6                         [.] __libc_calloc
+     0.33%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de884d
+     0.33%     0.33%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2ae4
+     0.33%     0.33%  nnmf-rs          [unknown]                         [k] 0xffffffff96586cb9
+     0.33%     0.33%  nnmf-rs          [unknown]                         [k] 0xffffffff96631516
+     0.32%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dfa2b
+     0.32%     0.32%  nnmf-rs          libexpat.so.1.8.7                 [.] 0x0000000000017d8f
+     0.32%     0.00%  nnmf-rs          libvulkan_intel.so                [.] 0x00007a05c38aff7a
+     0.32%     0.00%  nnmf-rs          libvulkan_intel.so                [.] 0x00007a05c3fae4de
+     0.32%     0.00%  nnmf-rs          libvulkan_intel.so                [.] 0x00007a05c3facb20
+     0.32%     0.00%  nnmf-rs          libvulkan_intel.so                [.] 0x00007a05c3fac945
+     0.32%     0.00%  nnmf-rs          libexpat.so.1.8.7                 [.] 0x00007a05c4e71417
+     0.32%     0.00%  nnmf-rs          libexpat.so.1.8.7                 [.] 0x00007a05c4e7bd8f
+     0.29%     0.29%  nnmf-rs          libc.so.6                         [.] 0x00000000000f9a28
+     0.29%     0.00%  nnmf-rs          libvulkan_intel_hasvk.so          [.] 0x00007a05b8487aea
+     0.29%     0.00%  nnmf-rs          libvulkan_intel_hasvk.so          [.] 0x00007a05b898ee8e
+     0.29%     0.00%  nnmf-rs          libvulkan_intel_hasvk.so          [.] 0x00007a05b898d4d0
+     0.29%     0.00%  nnmf-rs          libvulkan_intel_hasvk.so          [.] 0x00007a05b898d2f5
+     0.29%     0.00%  nnmf-rs          libexpat.so.1.8.7                 [.] 0x00007a05c4e71843
+     0.29%     0.00%  nnmf-rs          libvulkan_intel_hasvk.so          [.] 0x00007a05b898dd03
+     0.29%     0.00%  nnmf-rs          libc.so.6                         [.] regfree
+     0.29%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50f9a28
+     0.29%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c4764
+     0.29%     0.29%  nnmf-rs          [unknown]                         [k] 0xffffffff9654a051
+     0.28%     0.28%  nnmf-rs          nnmf-rs                           [.] alloc::vec::Vec<T,A>::resize
+     0.28%     0.28%  nnmf-rs          [unknown]                         [k] 0xffffffff975fafb7
+     0.28%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2835aa4
+     0.28%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] NvGlEglApiInit
+     0.28%     0.28%  nnmf-rs          [unknown]                         [k] 0xffffffff96566e40
+     0.28%     0.28%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d21c97
+     0.28%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121c97
+     0.28%     0.28%  nnmf-rs          [unknown]                         [k] 0xffffffff975da88b
+     0.28%     0.28%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bb9a
+     0.27%     0.27%  nnmf-rs          [unknown]                         [k] 0xffffffff9760016e
+     0.27%     0.00%  nnmf-rs          nnmf-rs                           [.] alloc::raw_vec::RawVec<T,A>::reserve::do_reserve_and_handle
+     0.27%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c375b9a4
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df2f6f
+     0.27%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl gpu_descriptor_types::device::DescriptorDevice<ash::vk::definitions::DescriptorSetLayout,ash::vk::definitions::DescriptorPool,ash::vk::definitions::DescriptorSet> for wgpu_hal::vulkan::DeviceShared>::alloc_descriptor_sets
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee496e
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b716bd7d
+     0.27%     0.27%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bba1
+     0.27%     0.27%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009e82ba
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee4b39
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de82ba
+     0.27%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::buffer::BufferTracker<A>::set_and_remove_from_usage_scope_sparse
+     0.27%     0.27%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e68941
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7268941
+     0.27%     0.27%  nnmf-rs          [unknown]                         [k] 0xffffffff9770410b
+     0.27%     0.27%  nnmf-rs          [unknown]                         [k] 0xffffffff965580f9
+     0.27%     0.27%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a6f08a
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f08a
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6f78249
+     0.27%     0.27%  nnmf-rs          [vdso]                            [.] 0x0000000000000b11
+     0.27%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeb11
+     0.27%     0.27%  nnmf-rs          [unknown]                         [k] 0xffffffff965581a5
+     0.27%     0.27%  nnmf-rs          [vdso]                            [.] 0x0000000000000ada
+     0.27%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeada
+     0.27%     0.27%  nnmf-rs          [unknown]                         [k] 0xffffffff975df4e6
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7221948
+     0.27%     0.27%  nnmf-rs          [unknown]                         [k] 0xffffffff9655bb40
+     0.27%     0.27%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000db3905
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dfa23
+     0.27%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b3905
+     0.27%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968d1e93
+     0.27%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968d18f8
+     0.27%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96ea79f1
+     0.27%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96ea78a0
+     0.27%     0.27%  nnmf-rs          [unknown]                         [k] 0xffffffff9654becb
+     0.26%     0.26%  nnmf-rs          [unknown]                         [k] 0xffffffff9654e572
+     0.26%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72688f8
+     0.26%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968102d2
+     0.26%     0.26%  nnmf-rs          [unknown]                         [k] 0xffffffff9658a31e
+     0.26%     0.26%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2b2e
+     0.26%     0.19%  nnmf-rs          nnmf-rs                           [.] hashbrown::map::HashMap<K,V,S,A>::retain
+     0.26%     0.13%  nnmf-rs          nnmf-rs                           [.] core::fmt::float::float_to_decimal_common_shortest
+     0.26%     0.00%  nnmf-rs          nnmf-rs                           [.] <nalgebra::base::matrix::Matrix<T,R,C,S> as core::fmt::Display>::fmt::val_width
+     0.26%     0.00%  nnmf-rs          nnmf-rs                           [.] alloc::fmt::format::format_inner
+     0.26%     0.06%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::command::<impl wgpu_hal::CommandEncoder<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::CommandEncoder>::set_bind_group
+     0.25%     0.25%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dd1c90
+     0.25%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71d1c90
+     0.25%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72617f7
+     0.25%     0.25%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f51681
+     0.25%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dfb2fb
+     0.25%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dfd8cf
+     0.25%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7351681
+     0.25%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334b28
+     0.25%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2848020
+     0.25%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2834a2c
+     0.25%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b283473f
+     0.25%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2845841
+     0.25%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c4922d18
+     0.25%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c491abfe
+     0.25%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c491bfb3
+     0.25%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c492125f
+     0.24%     0.09%  nnmf-rs          nnmf-rs                           [.] <wgpu_hal::gles::egl::Instance as wgpu_hal::Instance<wgpu_hal::gles::Api>>::enumerate_adapters
+     0.24%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71df2f7
+     0.24%     0.24%  nnmf-rs          nnmf-rs                           [.] core::slice::memchr::memchr_aligned
+     0.23%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13e7702
+     0.23%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13f2737
+     0.22%     0.08%  nnmf-rs          [unknown]                         [k] 0xffffffff9654f27b
+     0.22%     0.22%  nnmf-rs          libc.so.6                         [.] 0x0000000000075376
+     0.22%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dfb4b3
+     0.22%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7357301
+     0.22%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e0b72f
+     0.22%     0.00%  nnmf-rs          libc.so.6                         [.] __snprintf
+     0.22%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5075376
+     0.22%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c483a
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6f782e1
+     0.21%     0.00%  nnmf-rs          libVkLayer_MESA_device_select.so  [.] 0x00007a05c368ba3c
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e66c7c
+     0.21%     0.21%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bbbe
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6c425
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b726ca98
+     0.21%     0.14%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::memory_init::<impl wgpu_core::command::BakedCommands<A>>::initialize_buffer_memory
+     0.21%     0.21%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff041
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff041
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7221c88
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7262da6
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e726dc
+     0.21%     0.21%  nnmf-rs          [unknown]                         [k] 0xffffffff975da89c
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73ff14a
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e8a31
+     0.21%     0.21%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddea90
+     0.21%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dea90
+     0.21%     0.21%  nnmf-rs          [unknown]                         [k] 0xffffffff9654bf05
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b716c34f
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff9654e5ab
+     0.20%     0.20%  nnmf-rs          libc.so.6                         [.] pthread_mutex_lock
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de832f
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bb0e
+     0.20%     0.20%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::track::stateless::StatelessTracker<wgpu_hal::vulkan::Api,wgpu_core::id::Id<wgpu_core::binding_model::BindGroup<wgpu_hal::empty::Api>>,wgpu_core::binding_model::BindGroup<wgpu_hal::vulkan::Api>>>
+     0.20%     0.13%  nnmf-rs          nnmf-rs                           [.] _ZN102_$LT$core..iter..adapters..map..Map$LT$I$C$F$GT$$u20$as$u20$core..iter..traits..iterator..Iterator$GT$4next17hb5022ddb412d8b99E.llvm.13464301561470426124
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff965613a0
+     0.20%     0.07%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::track::BindGroupStates<wgpu_hal::vulkan::Api>>
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff96558d3a
+     0.20%     0.20%  nnmf-rs          [vdso]                            [.] 0x000000000000086c
+     0.20%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbe86c
+     0.20%     0.20%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff010
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff010
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff975f22a5
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff975da8a8
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff9658a307
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff96631503
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e79802
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723b869
+     0.20%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96811304
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff9654f341
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff9656123d
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff9658a32b
+     0.20%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5463340
+     0.20%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9680c296
+     0.20%     0.20%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde356
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de356
+     0.20%     0.20%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff0f7
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff0f7
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7117236
+     0.20%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::life::ResourceMaps<A>::extend
+     0.20%     0.20%  nnmf-rs          [vdso]                            [.] 0x0000000000000b3d
+     0.20%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeb3d
+     0.20%     0.20%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000b4a5
+     0.20%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d4a5
+     0.20%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334c88
+     0.20%     0.20%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2b32
+     0.19%     0.19%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x0000000000011429
+     0.19%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5463429
+     0.19%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::instance::Adapter<A>::create_device_and_queue
+     0.19%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::adapter::<impl wgpu_hal::Adapter<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Adapter>::open
+     0.19%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] vkCreateDevice
+     0.18%     0.18%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000002a83b
+     0.18%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2835a88
+     0.18%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2835d77
+     0.18%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28bfded
+     0.18%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5460a0e
+     0.18%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5455b83
+     0.18%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5459e88
+     0.18%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c547c83b
+     0.17%     0.17%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000c12d
+     0.17%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545e12d
+     0.17%     0.00%  nnmf-rs          libc.so.6                         [.] realloc
+     0.16%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c512684f
+     0.16%     0.16%  nnmf-rs          [unknown]                         [k] 0xffffffff965613a2
+     0.16%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5094ac2
+     0.16%     0.00%  nnmf-rs          libEGL.so.1.1.0                   [.] 0x00007a05c365e50c
+     0.16%     0.00%  nnmf-rs          libEGL.so.1.1.0                   [.] 0x00007a05c365e375
+     0.16%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b284db9b
+     0.15%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5563
+     0.15%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968b020a
+     0.15%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee482b
+     0.15%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72378f8
+     0.15%     0.15%  nnmf-rs          [unknown]                         [k] 0xffffffff965612b7
+     0.15%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72f4f05
+     0.15%     0.00%  [vkps] Update    libc.so.6                         [.] 0x00007a05c512684f
+     0.15%     0.00%  [vkps] Update    libc.so.6                         [.] 0x00007a05c5094ac2
+     0.15%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff97600126
+     0.15%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff975da859
+     0.15%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723c995
+     0.15%     0.15%  nnmf-rs          [unknown]                         [k] 0xffffffff975fafac
+     0.15%     0.00%  nnmf-rs          libVkLayer_MESA_device_select.so  [.] 0x00007a05c368ba60
+     0.15%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a3bda
+     0.14%     0.14%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00000000009fce7a
+     0.14%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b1408a1f
+     0.14%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13fce7a
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d3d
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d3d
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dcf796
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71cf796
+     0.14%     0.14%  nnmf-rs          libvulkan_lvp.so                  [.] 0x000000000010b038
+     0.14%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c3499
+     0.14%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2f0b038
+     0.14%     0.00%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu::BindGroup>
+     0.14%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5563
+     0.14%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b72106bc
+     0.14%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6df30ab
+     0.14%     0.00%  [vkps] Update    libc.so.6                         [.] pthread_cond_timedwait
+     0.14%     0.00%  [vkps] Update    libc.so.6                         [.] 0x00007a05c5091117
+     0.14%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff966132b5
+     0.14%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96612b1d
+     0.14%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96616e04
+     0.14%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968c4933
+     0.14%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96ea74b8
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334aa4
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7261b38
+     0.14%     0.14%  nnmf-rs          libc.so.6                         [.] 0x00000000000a2e54
+     0.14%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a2e54
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3fa4
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3fa4
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121d7f
+     0.14%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96616d05
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff9654f25d
+     0.14%     0.14%  nnmf-rs          libc.so.6                         [.] 0x00000000000a28ca
+     0.14%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a28ca
+     0.14%     0.14%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::buffer::BufferUsageScope<A>::merge_bind_group
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e630f8
+     0.14%     0.14%  nnmf-rs          nnmf-rs                           [.] _ZN102_$LT$core..iter..adapters..map..Map$LT$I$C$F$GT$$u20$as$u20$core..iter..traits..iterator..Iterator$GT$9size_hint17h4b6e8663f708200bE.llvm.13464301561470426124
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d21cbe
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121cbe
+     0.14%     0.07%  nnmf-rs          nnmf-rs                           [.] alloc::sync::Arc<T,A>::drop_slow
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff9656127f
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff975f229f
+     0.14%     0.00%  nnmf-rs          nnmf-rs                           [.] bit_vec::BitVec<B>::grow
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ad1f10
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ed1f10
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df680d
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dd343
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e18ebc
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7218ebc
+     0.14%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c375b362
+     0.14%     0.07%  nnmf-rs          nnmf-rs                           [.] <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f34b7c
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334b7c
+     0.14%     0.14%  nnmf-rs          libc.so.6                         [.] 0x00000000000a3a1e
+     0.14%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a3a1e
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3c99d
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723c99d
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee4a67
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dc6d15
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c6d15
+     0.14%     0.14%  nnmf-rs          [vdso]                            [.] 0x0000000000000b2b
+     0.14%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeb2b
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff975f2705
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dc6ac9
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c6ac9
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff9654bea6
+     0.14%     0.14%  nnmf-rs          libc.so.6                         [.] pthread_rwlock_wrlock
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff96561398
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde72e
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de72e
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de955
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff9656126a
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff96586cbd
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2ac0
+     0.14%     0.14%  nnmf-rs          [vdso]                            [.] 0x0000000000000b15
+     0.14%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeb15
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff96558cb0
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff105
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff105
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bb34
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73eff37
+     0.14%     0.14%  nnmf-rs          [unknown]                         [k] 0xffffffff96631518
+     0.14%     0.14%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d45
+     0.14%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d45
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff9655baa3
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bbc2
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff96561244
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff975da8d1
+     0.13%     0.13%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e68923
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7268923
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6eeb190
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f22e
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff976001bc
+     0.13%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu::CommandEncoder::finish
+     0.13%     0.13%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff03c
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff03c
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff96549e90
+     0.13%     0.13%  nnmf-rs          libc.so.6                         [.] 0x0000000000198974
+     0.13%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c3767
+     0.13%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52e606a
+     0.13%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5198974
+     0.13%     0.13%  nnmf-rs          libnvidia-gpucomp.so.550.67       [.] 0x0000000000596af8
+     0.13%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b1408a24
+     0.13%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b144ee12
+     0.13%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b14ebbb9
+     0.13%     0.00%  nnmf-rs          libnvidia-gpucomp.so.550.67       [.] 0x00007a05b3d96af8
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff96561347
+     0.13%     0.13%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e37a1e
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7237a1e
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff9655bb5f
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff9654e59a
+     0.13%     0.13%  nnmf-rs          libc.so.6                         [.] 0x000000000019d1ca
+     0.13%     0.00%  nnmf-rs          libEGL.so.1.1.0                   [.] 0x00007a05c3662d7d
+     0.13%     0.00%  nnmf-rs          libEGL.so.1.1.0                   [.] 0x00007a05c3662629
+     0.13%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c519d1ca
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b711664a
+     0.13%     0.13%  nnmf-rs          nnmf-rs                           [.] <wgpu_core::track::buffer::BufferTracker<A> as wgpu_core::track::ResourceTracker<wgpu_core::id::Id<wgpu_core::resource::Buffer<wgpu_hal::empty::Api>>,wgpu_core::resource::Buffer<A>>>::remove_abandoned
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff9658a33f
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff96561188
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff9760015e
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff96561495
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff96561181
+     0.13%     0.13%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d6f
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d6f
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff975df62d
+     0.13%     0.13%  nnmf-rs          nnmf-rs                           [.] _ZN9hashbrown3raw21RawTable$LT$T$C$A$GT$14reserve_rehash17h272bd5d5bc94689dE.llvm.8782830480659975872
+     0.13%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::resource::Device<A>::create_buffer_binding
+     0.13%     0.00%  nnmf-rs          nnmf-rs                           [.] hashbrown::map::HashMap<K,V,S,A>::insert
+     0.13%     0.13%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddf812
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71df812
+     0.13%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52bf3ec
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff9656135d
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334ca8
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dd6ca
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff9655bb19
+     0.13%     0.13%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3d5a
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3d5a
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff965611ac
+     0.13%     0.13%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::buffer::BufferBindGroupState<A>::drain_resources
+     0.13%     0.00%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<sandblast::device::GpuDevice>
+     0.13%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::device_drop
+     0.13%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu::backend::wgpu_core::ContextWgpuCore as wgpu::context::Context>::device_drop
+     0.13%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::global::<impl wgpu_core::global::Global<G>>::device_poll
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7261025
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b70dc59e
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff96460319
+     0.13%     0.13%  nnmf-rs          nnmf-rs                           [.] core::num::flt2dec::strategy::grisu::format_shortest_opt
+     0.13%     0.00%  nnmf-rs          libc.so.6                         [.] __snprintf_chk
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71bd16e
+     0.13%     0.13%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dc6a7f
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b88bb
+     0.13%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c6a7f
+     0.13%     0.13%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x0000000000067158
+     0.13%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c4938f2b
+     0.13%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c493a9a5
+     0.13%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c49381ac
+     0.13%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c4938158
+     0.13%     0.13%  nnmf-rs          [unknown]                         [k] 0xffffffff96595a1b
+     0.13%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96ea74ee
+     0.13%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96eac72d
+     0.13%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9658329a
+     0.13%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975fa78e
+     0.12%     0.06%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::command::bind::Binder<wgpu_hal::vulkan::Api>>
+     0.12%     0.12%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f34a5c
+     0.12%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334a5c
+     0.12%     0.12%  nnmf-rs          libc.so.6                         [.] 0x00000000001a0fd2
+     0.12%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73ff20e
+     0.12%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a0fd2
+     0.12%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7307e33
+     0.12%     0.12%  nnmf-rs          [unknown]                         [k] 0xffffffff968d3195
+     0.12%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c4939030
+     0.12%     0.00%  nnmf-rs          libc.so.6                         [.] fclose
+     0.12%     0.00%  nnmf-rs          libc.so.6                         [.] _IO_file_close_it
+     0.12%     0.00%  nnmf-rs          libc.so.6                         [.] __close_nocancel
+     0.12%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968c931e
+     0.12%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968d335c
+     0.12%     0.12%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00000000009fce6f
+     0.12%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13fce6f
+     0.12%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c54552a1
+     0.12%     0.12%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00000000009f9aeb
+     0.12%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13e78b4
+     0.12%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13e753e
+     0.12%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b146c28b
+     0.12%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b14a4a05
+     0.12%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13f9aeb
+     0.11%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5467dad
+     0.11%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5464f70
+     0.11%     0.11%  nnmf-rs          [unknown]                         [k] 0xffffffff968e21ac
+     0.11%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c1668
+     0.11%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52df084
+     0.11%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52dc5e7
+     0.11%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52dc4d8
+     0.11%     0.00%  nnmf-rs          libc.so.6                         [.] access
+     0.11%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968c986c
+     0.11%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968c955a
+     0.11%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968ea09e
+     0.11%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968e9e24
+     0.11%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968e8fae
+     0.11%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968e82bb
+     0.11%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968e25f0
+     0.11%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3774234
+     0.11%     0.00%  nnmf-rs          libX11.so.6.4.0                   [.] XOpenDisplay
+     0.11%     0.11%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00000000009fce68
+     0.11%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13fce68
+     0.11%     0.11%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000b4e5
+     0.11%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d4e5
+     0.11%     0.00%  nnmf-rs          libc.so.6                         [.] ioctl
+     0.11%     0.11%  nnmf-rs          libc.so.6                         [.] 0x00000000000c4aee
+     0.11%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c4924125
+     0.11%     0.00%  nnmf-rs          libnvidia-glsi.so.550.67          [.] 0x00007a05c4924061
+     0.11%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50c4aee
+     0.11%     0.11%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000b53c
+     0.11%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d53c
+     0.11%     0.11%  nnmf-rs          libc.so.6                         [.] 0x00000000000a2cad
+     0.11%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a2cad
+     0.11%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968b01f5
+     0.11%     0.11%  nnmf-rs          nnmf-rs                           [.] core::num::dec2flt::parse::parse_number
+     0.10%     0.10%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000c154
+     0.10%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545e154
+     0.10%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5029d96
+     0.10%     0.00%  nnmf-rs          libc.so.6                         [.] exit
+     0.10%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5045494
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7169e18
+     0.10%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d7e8
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7169e9f
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71f2f01
+     0.10%     0.10%  nnmf-rs          [unknown]                         [k] 0xffffffff968ae6be
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e88bd
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e8ace
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71d0476
+     0.10%     0.10%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000b734
+     0.10%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d734
+     0.10%     0.10%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000b247
+     0.10%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d247
+     0.10%     0.10%  nnmf-rs          [unknown]                         [k] 0xffffffff97600b89
+     0.10%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545fff5
+     0.10%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5458567
+     0.10%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545847d
+     0.10%     0.00%  nnmf-rs          libLLVM-15.so.1                   [.] 0x00007a05bcb6bb69
+     0.10%     0.00%  nnmf-rs          libLLVM-15.so.1                   [.] 0x00007a05be011c80
+     0.10%     0.10%  nnmf-rs          [unknown]                         [k] 0xffffffff968b01d1
+     0.10%     0.00%  nnmf-rs          nnmf-rs                           [.] sandblast::shader::ComputeShader<T>::new
+     0.10%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52bbcc9
+     0.10%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52be679
+     0.10%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3773d9f
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b711d1f4
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7393a26
+     0.10%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c37289cb
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dffe9e
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff6a0
+     0.10%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de8c23
+     0.10%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a4cc6
+     0.09%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334a35
+     0.09%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71cf570
+     0.09%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7178aaa
+     0.09%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71f2acc
+     0.09%     0.09%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00000000009e06b6
+     0.09%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b283b76b
+     0.09%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2898531
+     0.09%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b14038ef
+     0.09%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13ec1b7
+     0.09%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13e3cce
+     0.09%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b140312a
+     0.09%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13e3637
+     0.09%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13e06b6
+     0.09%     0.09%  [vkps] Update    [unknown]                         [k] 0xffffffff9755207f
+     0.09%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff966164f3
+     0.09%     0.09%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2afc
+     0.09%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::instance::<impl wgpu_core::global::Global<G>>::request_adapter::gather
+     0.08%     0.08%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x0000000000027266
+     0.08%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3728c7e
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e11df1
+     0.08%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c54609a8
+     0.08%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545c4e5
+     0.08%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5479266
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f5167a
+     0.08%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c37289dd
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b735167a
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000b6c57a
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6f6c57a
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fdcda3
+     0.08%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c3728b70
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b70d7611
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b70d73bc
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73dcda3
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000db8a42
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b8a42
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde6ff
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de6ff
+     0.08%     0.08%  nnmf-rs          [unknown]                         [k] 0xffffffff9655b99a
+     0.08%     0.08%  nnmf-rs          [unknown]                         [k] 0xffffffff9743f57f
+     0.08%     0.00%  nnmf-rs          libVkLayer_MESA_device_select.so  [.] 0x00007a05c368be31
+     0.08%     0.00%  nnmf-rs          libVkLayer_MESA_device_select.so  [.] 0x00007a05c368c4ff
+     0.08%     0.00%  nnmf-rs          libxcb.so.1.1.0                   [.] xcb_wait_for_reply
+     0.08%     0.00%  nnmf-rs          libxcb.so.1.1.0                   [.] 0x00007a05c5267eb0
+     0.08%     0.00%  nnmf-rs          libxcb.so.1.1.0                   [.] 0x00007a05c5267a08
+     0.08%     0.00%  nnmf-rs          libxcb.so.1.1.0                   [.] 0x00007a05c5266ee7
+     0.08%     0.00%  nnmf-rs          libc.so.6                         [.] recvmsg
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff972829ed
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff97282962
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff97281a41
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9727e773
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9727e5a1
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9743c40d
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9743c140
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff97295f33
+     0.08%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff97293387
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e17740
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7217740
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddf7f9
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71df7f9
+     0.08%     0.08%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::texture::TextureBindGroupState<A>::drain_resources
+     0.08%     0.08%  nnmf-rs          libc.so.6                         [.] 0x00000000000a181b
+     0.08%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a181b
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3a45a
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723a45a
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e62d84
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7221ce6
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7262d84
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009e82b0
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee49f5
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de82b0
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a736fc
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e7986b
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ebc34e
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e54223
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e736fc
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dea31f
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ea31f
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c6d17
+     0.08%     0.08%  nnmf-rs          [unknown]                         [k] 0xffffffff965581a1
+     0.08%     0.08%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::global::<impl wgpu_core::global::Global<G>>::bind_group_drop
+     0.08%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::bind_group_drop
+     0.08%     0.08%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddffb2
+     0.08%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dffb2
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff966314f7
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975f2712
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7257105
+     0.07%     0.07%  nnmf-rs          [vdso]                            [.] 0x0000000000000b09
+     0.07%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeb09
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] pthread_equal
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7268690
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de82f3
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dddcd4
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ddcd4
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff968c4455
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu::Queue>
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::global::Global<wgpu_core::identity::IdentityManagerFactory>>
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] <hashbrown::raw::RawIntoIter<T,A> as core::ops::drop::Drop>::drop
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ae3a47
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee3a47
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a17d0c
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e06b3
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b726ce3d
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b726cd02
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e17d0c
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ae4535
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee4535
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a22b77
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7268632
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e22b77
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000000a275d
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a275d
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96558ca8
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000001a0fa4
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a0fa4
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::track::stateless::StatelessTracker<wgpu_hal::vulkan::Api,wgpu_core::id::Id<wgpu_core::pipeline::ComputePipeline<wgpu_hal::empty::Api>>,wgpu_core::pipeline::ComputePipeline<wgpu_hal::vulkan::Api>>>
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f32d22
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7314ed8
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7332d22
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e6ca77
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121d25
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b726ca77
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bae6
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a6c321
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6c321
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e17950
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7217950
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9656ba8b
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e5c7d5
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121d43
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b725c7d5
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000da25f7
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71a25f7
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000000a3a35
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a3a35
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009e9185
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5bf6
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de9185
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fd7f15
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73ff2cf
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73d7f15
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff10b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff10b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7334c63
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d20e10
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7120e10
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000db3a7d
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dec54
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b3a7d
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddfa17
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dfa17
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975df581
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3c7c1
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723ca50
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723c7c1
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a631d6
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e631d6
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde3f8
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de3f8
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e14583
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71bd0b6
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7214583
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d6cfe4
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b716cfe4
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::stateless::StatelessBindGroupSate<Id,T>::optimize
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dddd77
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ddd77
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3be36
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ea42b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723be36
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ad1f17
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ed1f17
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddfa75
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dfa75
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::track::stateless::StatelessTracker<wgpu_hal::vulkan::Api,wgpu_core::id::Id<wgpu_core::command::bundle::RenderBundle<wgpu_hal::empty::Api>>,wgpu_core::command::bundle::RenderBundle<wgpu_hal::vulkan::Api>>>
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000b6c57c
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6f6c57c
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000001a0fcd
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121d61
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a0fcd
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9658a356
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000000a46dc
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a46dc
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] <gpu_descriptor::allocator::Allocation<S> as core::iter::traits::collect::Extend<S>>::extend
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] <alloc::vec::Vec<T,A> as alloc::vec::spec_extend::SpecExtend<T,I>>::spec_extend
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] alloc::raw_vec::RawVec<T,A>::reserve::do_reserve_and_handle
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] _ZN5alloc7raw_vec11finish_grow17h8c84fbd06abdc762E.llvm.12469237200005468471
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e95eb
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e17959
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7217959
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dea4d7
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ea4d7
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] <wgpu::CommandBuffer as core::ops::drop::Drop>::drop
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] _ZN4core3ptr40drop_in_place$LT$wgpu..CommandBuffer$GT$17h649e8a400952ccdeE.llvm.13464301561470426124
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a17bc3
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b722147b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e17bc3
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000001a0964
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a0964
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f6993d
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71163b9
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b736993d
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9654f282
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff968c45c1
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddfab4
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dfab4
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3f34
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3f34
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6efeb
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e37d7a
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7237d7a
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655819c
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000001a0faa
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a0faa
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655819f
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] <hashbrown::map::HashMap<K,V,S,A> as core::iter::traits::collect::Extend<(K,V)>>::extend
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96630a67
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e177c2
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72177c2
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dddd60
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ddd60
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a61bfc
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e61bfc
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000001a07eb
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7221cb8
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a07eb
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a4b89
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] alloc::raw_vec::RawVec<T,A>::reserve::do_reserve_and_handle
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bc00
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96558cb3
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d647cc
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b932c
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71647cc
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde8b2
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de8b2
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x0000000000075247
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x0000000000198962
+     0.07%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c3730
+     0.07%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c39d4
+     0.07%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52b99aa
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5075247
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5198962
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e21244
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7221244
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975df58a
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddeb5d
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71deb5d
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] hashbrown::map::HashMap<K,V,S,A>::retain
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96630a4f
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_core::storage::Storage<T,I>::get
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::registry::Registry<I,T>::get
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a6f241
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f241
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dd1c82
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71d1c82
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddf92b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71df92b
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975fb0f8
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000db0d53
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl wgpu_hal::Device<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Device>::get_fence_value
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7113729
+     0.07%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9654a050
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b0d53
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000da2211
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71a2211
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3f24
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3f24
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d20e2c
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7120e2c
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff965185a0
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] hashbrown::map::HashMap<K,V,S,A>::insert
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddda67
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dda67
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::bind::compat::BoundBindGroupLayouts<A>::assign
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::bind::Binder<A>::assign_group
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71f0283
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9656ba76
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d6b53b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b716b53b
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d21c74
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121c74
+     0.07%     0.00%  nnmf-rs          [stack]                           [.] 0x00007ffd71b64b0f
+     0.07%     0.00%  nnmf-rs          libnvidia-glvkspirv.so.550.67     [.] 0x00007a05b34f849c
+     0.07%     0.00%  nnmf-rs          libnvidia-glvkspirv.so.550.67     [.] 0x00007a05b2e66a0e
+     0.07%     0.00%  nnmf-rs          libnvidia-glvkspirv.so.550.67     [.] 0x00007a05b2e36318
+     0.07%     0.00%  nnmf-rs          libnvidia-glvkspirv.so.550.67     [.] 0x00007a05b31f5214
+     0.07%     0.00%  nnmf-rs          libnvidia-glvkspirv.so.550.67     [.] 0x00007a05b31f517f
+     0.07%     0.00%  nnmf-rs          libnvidia-glvkspirv.so.550.67     [.] 0x00007a05b31e7e3b
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3c86f
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723c86f
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9654be6d
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000001a08c0
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a08c0
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96561170
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee49dc
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2ac1
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ce7a69
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b725a170
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7256af2
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b70e7a69
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96561391
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2b4f
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ce786f
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b70e786f
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975f218d
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975fb0e0
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9654f2e1
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff97600080
+     0.07%     0.00%  nnmf-rs          [stack]                           [.] 0x00007ffd71b6352b
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ad3187
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ed3187
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] <wgpu::BindGroup as core::ops::drop::Drop>::drop
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009e8579
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723a931
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6de8579
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96558cca
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a6f676
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f676
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::conv::map_buffer_usage_to_barrier
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7332c56
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000daf8b6
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dfa85
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71af8b6
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f36553
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7336553
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f036
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb3cd0
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b3cd0
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] <alloc::vec::Vec<T,A> as alloc::vec::spec_extend::SpecExtend<T,I>>::spec_extend
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dc5a04
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c5a04
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bb20
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde381
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de381
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f6807
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df6807
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9658a33c
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000de0212
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e0212
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723c989
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff968d1e25
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e6ca68
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121d70
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b726ca68
+     0.07%     0.07%  nnmf-rs          [vdso]                            [.] 0x0000000000000acf
+     0.07%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeacf
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dc8398
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7123078
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c8398
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9652aa52
+     0.07%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965185be
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] alloc::vec::Vec<T,A>::resize
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fefd63
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73efd63
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3a83d
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723a83d
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e37b75
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7237b75
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a6f781
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f781
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d12a53
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7112a53
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000db45f5
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73357e5
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b45f5
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f58ad
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df65d5
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df58ad
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ad31fb
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e61bdf
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ed31fb
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655817a
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9654bed1
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000001a0931
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a0931
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ce784a
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b70e784a
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::stateless::StatelessBindGroupSate<Id,T>::drain_resources
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975da854
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3c618
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7332d93
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73e9007
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723c618
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655bb13
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9654be6b
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::buffer::BufferBindGroupState<A>::used_ids
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde3f1
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de3f1
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3b783
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dd30b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73158ac
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723b783
+     0.07%     0.07%  nnmf-rs          [vdso]                            [.] 0x0000000000000b7f
+     0.07%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeb7f
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3a3a1
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723a3a1
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] __rdl_dealloc
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9654e586
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f35886
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7335886
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff969003e1
+     0.07%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968d1e4e
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e1778d
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b721778d
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96558c71
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b734228e
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bb1b
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff97600151
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ae3ad8
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee3ad8
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655bb06
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9656bbb3
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::metadata::ResourceMetadata<A,I,T>::remove
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000000a2709
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ea40c
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a2709
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a785d7
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee47af
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e785d7
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e0de62
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b720de62
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9658a321
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d6bddb
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b716bddb
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655b9ae
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e570f0
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72570f0
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9760015b
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddeac0
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71deac0
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96630a77
+     0.07%     0.07%  nnmf-rs          [vdso]                            [.] 0x0000000000000abb
+     0.07%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeabb
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e39c9a
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7332d78
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7239c9a
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_core::storage::Storage<T,I>::get
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::command_encoder_finish
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu::backend::wgpu_core::ContextWgpuCore as wgpu::context::Context>::command_encoder_finish
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::<impl wgpu_core::global::Global<G>>::command_encoder_finish
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::registry::Registry<I,T>::get
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff97600155
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96558d3f
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655816b
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9654bf1c
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ae4bbb
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee40e3
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ed1f90
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee4bbb
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96558c66
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] core::ptr::drop_in_place<wgpu_core::command::bind::EntryPayload<wgpu_hal::vulkan::Api>>
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dc5915
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c5915
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e0e337
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e95d5
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b720e337
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e3c97d
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723c97d
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e1a57e
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b721ae5a
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b721a57e
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddebcb
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71debcb
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655bb58
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ae3d5b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee475b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee3d5b
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f591d
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5c05
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df591d
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ae49fc
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee49fc
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b723ca1c
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff0e4
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff0e4
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000000a1846
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu::Device::create_command_encoder
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::device_create_command_encoder
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu::backend::wgpu_core::ContextWgpuCore as wgpu::context::Context>::device_create_command_encoder
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::global::<impl wgpu_core::global::Global<G>>::device_create_command_encoder
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::registry::FutureId<I,T>::assign
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a1846
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e2117c
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b722117c
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000000a1743
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::CommandBuffer<A>::from_arc_into_baked
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a2d2a
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a1743
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a6f506
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f506
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ad31db
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ed31db
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddfa33
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dfa33
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2b42
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e193c8
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72193c8
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e29f31
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b725a0af
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7229f31
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2b4e
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff9655b9aa
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddf28b
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71df28b
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96561261
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96561496
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f14e94
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7314e94
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e16502
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b725a4ff
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7216502
+     0.07%     0.07%  nnmf-rs          [vdso]                            [.] 0x0000000000000b50
+     0.07%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbeb50
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009ff032
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dff032
+     0.07%     0.00%  nnmf-rs          libVkLayer_MESA_device_select.so  [.] 0x00007a05c368b94b
+     0.07%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52beff5
+     0.07%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52beae3
+     0.07%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2f06730
+     0.07%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2f05b48
+     0.07%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e623ef
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96549e96
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000da2589
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71a2589
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] alloc::sync::Arc<T,A>::drop_slow
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::instance::<impl core::ops::drop::Drop for wgpu_hal::vulkan::InstanceShared>::drop
+     0.07%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] vkDestroyInstance
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde282
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de282
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff97600121
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e01e1a
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72176af
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7201e1a
+     0.07%     0.00%  nnmf-rs          nnmf-rs                           [.] alloc::raw_vec::RawVec<T,A>::reserve_for_push
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975f21fe
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96558d30
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::command::<impl wgpu_hal::CommandEncoder<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::CommandEncoder>::begin_compute_pass
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72177ed
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e5c726
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b721770f
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b725c726
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000b7e381
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6f7e381
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff96586cc2
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e17927
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7217927
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f2daa
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df2daa
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d220ba
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71220ba
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975f288c
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d6b3f7
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b716b3f7
+     0.07%     0.07%  nnmf-rs          libc.so.6                         [.] 0x00000000000a3c1c
+     0.07%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a3c1c
+     0.07%     0.07%  nnmf-rs          nnmf-rs                           [.] <hashbrown::map::HashMap<K,V,S,A> as core::iter::traits::collect::Extend<(K,V)>>::extend
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a17bf6
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e17bf6
+     0.07%     0.07%  nnmf-rs          [unknown]                         [k] 0xffffffff975fb0f9
+     0.07%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9654f2db
+     0.07%     0.07%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ae4967
+     0.07%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6ee4967
+     0.06%     0.06%  nnmf-rs          [unknown]                         [k] 0xffffffff9655b98d
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a79391
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e79391
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dc59b5
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c59b5
+     0.06%     0.06%  nnmf-rs          [unknown]                         [k] 0xffffffff9654a046
+     0.06%     0.06%  nnmf-rs          nnmf-rs                           [.] <hashbrown::map::HashMap<K,V,S,A> as core::iter::traits::collect::Extend<(K,V)>>::extend
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e18496
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7219040
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72185f6
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7218496
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f36551
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c6e3b
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7336551
+     0.06%     0.06%  nnmf-rs          [unknown]                         [k] 0xffffffff975df4f0
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000a6f1dc
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6f1dc
+     0.06%     0.06%  nnmf-rs          libvulkan_lvp.so                  [.] 0x000000000014111a
+     0.06%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e622b3
+     0.06%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e7d1ba
+     0.06%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e7dab4
+     0.06%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2f4144f
+     0.06%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2f4111a
+     0.06%     0.06%  nnmf-rs          [unknown]                         [k] 0xffffffffc133e701
+     0.06%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b283b9bf
+     0.06%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b283b1c7
+     0.06%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b1402233
+     0.06%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13e49b4
+     0.06%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b1426794
+     0.06%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b14226db
+     0.06%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b14223da
+     0.06%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b18385ce
+     0.06%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b1836d9f
+     0.06%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b1835298
+     0.06%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968ef6a3
+     0.06%     0.06%  nnmf-rs          [unknown]                         [k] 0xffffffff965612c2
+     0.06%     0.06%  nnmf-rs          nnmf-rs                           [.] <core::option::Option<alloc::borrow::Cow<str>> as wgpu_core::LabelHelpers>::to_hal
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddd9db
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dd9db
+     0.06%     0.06%  nnmf-rs          libc.so.6                         [.] 0x00000000001a08cf
+     0.06%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a08cf
+     0.06%     0.06%  nnmf-rs          libc.so.6                         [.] 0x000000000019d42d
+     0.06%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52b9870
+     0.06%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50750e1
+     0.06%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c519d42d
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e8ab3
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71d02d6
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b9364
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b4007
+     0.06%     0.06%  nnmf-rs          nnmf-rs                           [.] wgpu_core::track::buffer::BufferTracker<A>::set_from_tracker
+     0.06%     0.06%  nnmf-rs          nnmf-rs                           [.] hashbrown::raw::RawTable<T,A>::clear
+     0.06%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::life::ResourceMaps<A>::clear
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e907b
+     0.06%     0.06%  nnmf-rs          [unknown]                         [k] 0xffffffff9683b090
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e8a86
+     0.06%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52bf174
+     0.06%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52b974b
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f3026
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df3026
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000fb4409
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73b4409
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000dde5eb
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71de5eb
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71eb3ac
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e5b6ed
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e791e4
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6eeb3b6
+     0.06%     0.06%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000ddd15e
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b716b75c
+     0.06%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71dd15e
+     0.06%     0.06%  nnmf-rs          [unknown]                         [k] 0xffffffff968a802e
+     0.06%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968b01cc
+     0.05%     0.05%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00000000009fc1d3
+     0.05%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28a335e
+     0.05%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2834fe8
+     0.05%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28a30fc
+     0.05%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b28a3084
+     0.05%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2835cb6
+     0.05%     0.00%  nnmf-rs          libEGL_nvidia.so.550.67           [.] 0x00007a05b2835bf9
+     0.05%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b140891a
+     0.05%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13f976c
+     0.05%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13fe08d
+     0.05%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13fc265
+     0.05%     0.00%  nnmf-rs          libnvidia-eglcore.so.550.67       [.] 0x00007a05b13fc1d3
+     0.05%     0.05%  nnmf-rs          [unknown]                         [k] 0xffffffff968ad5ed
+     0.05%     0.05%  nnmf-rs          nnmf-rs                           [.] hashbrown::rustc_entry::<impl hashbrown::map::HashMap<K,V,S,A>>::rustc_entry
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu::Device::create_compute_pipeline
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::device_create_compute_pipeline
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu::backend::wgpu_core::ContextWgpuCore as wgpu::context::Context>::device_create_compute_pipeline
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::global::<impl wgpu_core::global::Global<G>>::device_create_compute_pipeline
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::resource::Device<A>::create_compute_pipeline
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl wgpu_hal::Device<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Device>::create_compute_pipeline
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl wgpu_hal::vulkan::Device>::compile_stage
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::back::spv::write_vec
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::back::spv::writer::<impl naga::back::spv::Writer>::write
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::back::spv::writer::<impl naga::back::spv::Writer>::write_logical_layout
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::back::spv::writer::<impl naga::back::spv::Writer>::write_function
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::back::spv::block::<impl naga::back::spv::BlockContext>::write_block
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::back::spv::block::<impl naga::back::spv::BlockContext>::cache_expression_value
+     0.05%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::back::spv::writer::<impl naga::back::spv::Writer>::get_type_id
+     0.05%     0.05%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f3654b
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b733654b
+     0.05%     0.05%  nnmf-rs          [vdso]                            [.] 0x0000000000000831
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df3071
+     0.05%     0.00%  nnmf-rs          [vdso]                            [.] 0x00007ffd71bbe831
+     0.05%     0.05%  nnmf-rs          [unknown]                         [k] 0xffffffff968a2538
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71d16c5
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71c0555
+     0.05%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968ad641
+     0.05%     0.05%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000de9f55
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e9f55
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e89b3
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71cff16
+     0.05%     0.05%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000d21f71
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7121f71
+     0.05%     0.05%  nnmf-rs          [unknown]                         [k] 0xffffffff968104d1
+     0.05%     0.05%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e13499
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b725a202
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7213499
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71e89cb
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71d0176
+     0.05%     0.05%  nnmf-rs          [unknown]                         [k] 0xffffffff9681028f
+     0.05%     0.05%  nnmf-rs          [unknown]                         [k] 0xffffffff968ae6c3
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71d18b1
+     0.05%     0.05%  [vkps] Update    [unknown]                         [k] 0xffffffff965f795f
+     0.05%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96616510
+     0.05%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff965f7acb
+     0.05%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff965f7a3e
+     0.05%     0.05%  nnmf-rs          [unknown]                         [k] 0xffffffff968b020e
+     0.05%     0.05%  nnmf-rs          nnmf-rs                           [.] wgpu_core::command::memory_init::fixup_discarded_surfaces
+     0.05%     0.05%  nnmf-rs          libc.so.6                         [.] 0x00000000000a29ad
+     0.05%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545824d
+     0.05%     0.00%  nnmf-rs          libEGL.so.1.1.0                   [.] 0x00007a05c365c876
+     0.05%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a29ad
+     0.05%     0.05%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000267d
+     0.05%     0.00%  nnmf-rs          libc.so.6                         [.] dlclose
+     0.05%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545467d
+     0.05%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b730062f
+     0.04%     0.04%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000db259f
+     0.04%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu::Device::create_pipeline_layout
+     0.04%     0.00%  nnmf-rs          nnmf-rs                           [.] <T as wgpu::context::DynContext>::device_create_pipeline_layout
+     0.04%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu::backend::wgpu_core::ContextWgpuCore as wgpu::context::Context>::device_create_pipeline_layout
+     0.04%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::global::<impl wgpu_core::global::Global<G>>::device_create_pipeline_layout
+     0.04%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::resource::Device<A>::create_pipeline_layout
+     0.04%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl wgpu_hal::Device<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Device>::create_pipeline_layout
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71cd2c0
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ccfc7
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71cb6e8
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b259f
+     0.04%     0.04%  nnmf-rs          [unknown]                         [k] 0xffffffffc1c58084
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71ec4b5
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71d5ab9
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73ea49a
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73d262a
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e5bd57
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e732a3
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e16f4a
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e9bab4
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e9a36e
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7309acd
+     0.04%     0.04%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000e6d509
+     0.04%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52bc362
+     0.04%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c377410d
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71210e9
+     0.04%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b726d509
+     0.03%     0.03%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::lexer::Lexer::next_ident
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::global::<impl wgpu_core::global::Global<G>>::device_create_shader_module
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::resource::Device<A>::create_shader_module
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse_str
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::Frontend::parse
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::parse
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::statement
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::block
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::assignment_statement
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::general_expression
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::ExpressionContext::parse_binary_op
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::ExpressionContext::parse_binary_op
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::ExpressionContext::parse_binary_op
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::ExpressionContext::parse_binary_op
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::ExpressionContext::parse_binary_op
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::equality_expression
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::equality_expression::_$u7b$$u7b$closure$u7d$$u7d$::hf67d5e1629980e8c
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::equality_expression::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::h618f27facb57fe66
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::equality_expression::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::h0c2402d6576aff89
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::equality_expression::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::h27b27873ffd91f5e
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::unary_expression
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::singular_expression
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::arguments
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] naga::front::wgsl::parse::Parser::general_expression_with_span
+     0.03%     0.03%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000005607c2
+     0.03%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_core::device::resource::Device<A>::new
+     0.03%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b71b89ea
+     0.03%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72694cf
+     0.03%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6985573
+     0.03%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6985516
+     0.03%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73a24c9
+     0.03%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b69607c2
+     0.03%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5472297
+     0.03%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5473597
+     0.03%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c547183b
+     0.03%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5474dac
+     0.02%     0.00%  nnmf-rs          libVkLayer_MESA_device_select.so  [.] 0x00007a05c368b44a
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7307a19
+     0.01%     0.01%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f07a19
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df30ab
+     0.01%     0.00%  nnmf-rs          libc.so.6                         [.] pthread_cond_timedwait
+     0.01%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c0dbe
+     0.01%     0.00%  [vkrt] Analysis  libc.so.6                         [.] 0x00007a05c512684f
+     0.01%     0.00%  [vkrt] Analysis  libc.so.6                         [.] 0x00007a05c5094ac2
+     0.01%     0.00%  nnmf-rs          nnmf-rs                           [.] wgpu_hal::vulkan::device::<impl wgpu_hal::Device<wgpu_hal::vulkan::Api> for wgpu_hal::vulkan::Device>::exit
+     0.01%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] vkDestroyDevice
+     0.01%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c37739af
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b732da42
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e58945
+     0.01%     0.01%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x0000000000e2df6f
+     0.01%     0.00%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5563
+     0.01%     0.00%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b723d16e
+     0.01%     0.00%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b722df6f
+     0.01%     0.01%  nnmf-rs          libc.so.6                         [.] 0x0000000000090a1b
+     0.01%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50910f2
+     0.01%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5090a1b
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b722bf64
+     0.01%     0.00%  nnmf-rs          libvulkan.so.1.3.204              [.] 0x00007a05c52c0957
+     0.01%     0.00%  nnmf-rs          libvulkan_radeon.so               [.] 0x00007a05b9347c22
+     0.01%     0.00%  nnmf-rs          libvulkan_radeon.so               [.] 0x00007a05b96a2eed
+     0.01%     0.01%  nnmf-rs          nnmf-rs                           [.] wgpu_core::hub::Hub<A>::clear
+     0.01%     0.00%  nnmf-rs          nnmf-rs                           [.] <wgpu_core::global::Global<G> as core::ops::drop::Drop>::drop
+     0.01%     0.01%  nnmf-rs          [unknown]                         [k] 0xffffffffc1367afb
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e573c6
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e45228
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e17ce1
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e173eb
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e99f14
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e9d143
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6b3b9
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e7b276
+     0.01%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5729
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff964cb4c8
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9680cd80
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c509494e
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a818c
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f07945
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51687f0
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b73085b0
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7203108
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7307945
+     0.00%     0.00%  nnmf-rs          libX11.so.6.4.0                   [.] _XConnectXCB
+     0.00%     0.00%  nnmf-rs          libxcb.so.1.1.0                   [.] xcb_connect_to_display_with_auth_info
+     0.00%     0.00%  nnmf-rs          libxcb.so.1.1.0                   [.] xcb_connect_to_fd
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000b2e9
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d2e9
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] sscanf
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff966132b5
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96612b1d
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5091117
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df555d
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6df555d
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00000000000a1153
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df6669
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a4a2c
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a1153
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00000000000a174d
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e571d6
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a2e9f
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a191a
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a174d
+     0.00%     0.00%  [vkps] Update    [unknown]                         [k] 0xffffffff9754dee8
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6df6669
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6de884d
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] __libc_calloc
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] 0x00007a05c50a4a40
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] 0x00007a05c50a216b
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] 0x00007a05c50a1c3c
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] __mmap
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96458f93
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96819b5a
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff967df423
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff9681d6c6
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff9681795f
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96890795
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff964594cf
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96817204
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e60c2c
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c305a586
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c305a615
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e60925
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c30d7b6e
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2ea0e22
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2ea0772
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2ea0439
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e9ffe2
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00000000001a07f3
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e95c02
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e97ec6
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a07f3
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] 0x00007a05c512684f
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] 0x00007a05c5094ac2
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff97600126
+     0.00%     0.00%  [vkcf] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6df555d
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff975da859
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff96616ddb
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [k] 0xffffffff9655eda4
+     0.00%     0.00%  [vkcf] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6df6743
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] pthread_mutex_unlock
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] 0x00007a05c5091337
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff966132b5
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff96612ad8
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff966160f7
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff96556df0
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff965569b8
+     0.00%     0.00%  [vkps] Update    [unknown]                         [k] 0xffffffff96611bf1
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96616ceb
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff96616b2e
+     0.00%     0.00%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6df555d
+     0.00%     0.00%  [vkrt] Analysis  [unknown]                         [k] 0xffffffff97600126
+     0.00%     0.00%  [vkrt] Analysis  [unknown]                         [k] 0xffffffff975f2b75
+     0.00%     0.00%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6df6669
+     0.00%     0.00%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6de884d
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] __libc_calloc
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] 0x00007a05c50a4a40
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] 0x00007a05c50a216b
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] 0x00007a05c50a1c81
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] __mmap
+     0.00%     0.00%  [vkrt] Analysis  [unknown]                         [.] 0xffffffff975da859
+     0.00%     0.00%  [vkrt] Analysis  [unknown]                         [.] 0xffffffff96458f93
+     0.00%     0.00%  [vkrt] Analysis  [unknown]                         [.] 0xffffffff96819b5a
+     0.00%     0.00%  [vkrt] Analysis  [unknown]                         [.] 0xffffffff967df3f0
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff975da820
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x0000000000062ab1
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00000000000633fd
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5672
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] open64
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5062ab1
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50633fd
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9680bfb7
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5473548
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5465530
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9680c1b9
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00000000000a2761
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e56e1d
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6edae1b
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6b06967
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a2761
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e56deb
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e46152
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6eed063
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e66bf9
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e66081
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b722be8b
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96616e04
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96616d05
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff966164c5
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] pthread_mutex_unlock
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2ea0898
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f07e3d
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7307e3d
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96616526
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975f2528
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9654ce7d
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9656685f
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965662ab
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff96561357
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff97555052
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff965f6555
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96616510
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f0794b
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f07a20
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965f7acb
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965f7a3e
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965f787a
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7307ddb
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965f674d
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96616ded
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b730794b
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7307a20
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff96616b7a
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96616ceb
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e95be3
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00000000009f663d
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6df663d
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x0000000000015dbd
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5467dbd
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [k] 0xffffffff9681d5b5
+     0.00%     0.00%  [vkcf] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6df6669
+     0.00%     0.00%  [vkcf] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6de884d
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] __libc_calloc
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] 0x00007a05c50a4a40
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] 0x00007a05c50a216b
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] 0x00007a05c50a1c81
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] __mmap
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff96458f93
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [.] 0xffffffff96819b5a
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b721072c
+     0.00%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x0000000000084331
+     0.00%     0.00%  nnmf-rs          libGLX_nvidia.so.550.67           [.] 0x00007a05c375b331
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] pthread_mutex_lock
+     0.00%     0.00%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6df680d
+     0.00%     0.00%  [vkrt] Analysis  libGLX_nvidia.so.550.67           [.] 0x00007a05c375b2e0
+     0.00%     0.00%  [vkrt] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6de832f
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x0000000000a6e944
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6e944
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9680c278
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff975fa7cb
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c547335b
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9683d5f6
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5531
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f5652
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5652
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6eed16f
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f0513c
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b730513c
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2ea0721
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] pthread_setaffinity_np
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e9f562
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9652bdd5
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96555a4d
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x0000000000012eef
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5464eef
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000b791
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d791
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000f07deb
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7307deb
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff97600083
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f3030
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df3030
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] pthread_mutex_lock
+     0.00%     0.00%  [vkcf] Analysis  libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5528
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x0000000000e106c1
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b72106c1
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] pthread_mutex_lock
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5528
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x0000000000a6e93e
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6e6e93e
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x000000000000b53a
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c545d53a
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff968048eb
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5473340
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] 0x000000000009491a
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00000000009f5511
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] 0x00007a05c509491a
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df5511
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff975fb035
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c509491a
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9651031f
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff9651006c
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b722c3d8
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b725d19e
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff96616024
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e2fc2d
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5091337
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96612ad8
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x0000000000efbe84
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7305292
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b72fbe84
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7307965
+     0.00%     0.00%  [vkps] Update    [unknown]                         [.] 0xffffffff975da865
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff975e2659
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c5094a88
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975e2c2d
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9680cd71
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00000000000a069d
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2ea069d
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e2fb1f
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50912c0
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00000000000a3a0d
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e2fb77
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e2f932
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a3a0d
+     0.00%     0.00%  [vkps] Update    [unknown]                         [k] 0xffffffff965f09e5
+     0.00%     0.00%  [vkps] Update    libnvidia-glcore.so.550.67        [.] 0x00007a05b6df30b8
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] pthread_mutex_unlock
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] 0x00007a05c5091337
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6e460d1
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6dea355
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b6df30b8
+     0.00%     0.00%  nnmf-rs          libnvidia-glcore.so.550.67        [.] 0x00007a05b7305186
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965559f8
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff97537763
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [k] 0xffffffff9680cd80
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [k] 0xffffffff975da884
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff967a27a7
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff97543203
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [k] 0xffffffff97600ba7
+     0.00%     0.00%  [vkcf] Analysis  libc.so.6                         [.] 0x00007a05c5094a88
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [k] 0xffffffff975e2693
+     0.00%     0.00%  [vkcf] Analysis  [unknown]                         [k] 0xffffffff964cb4c8
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c31d8780
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff967a293b
+     0.00%     0.00%  [vkps] Update    [unknown]                         [k] 0xffffffff975e2b8b
+     0.00%     0.00%  [vkps] Update    libc.so.6                         [.] 0x00007a05c5094a88
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff964cb431
+     0.00%     0.00%  [vkrt] Analysis  libc.so.6                         [.] 0x00007a05c5094a88
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x0000000000012e96
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff967a2185
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff97543416
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5464e96
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff967a2947
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9684c34b
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5473071
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96555a0b
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff96545d3e
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968c4822
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff968c45fc
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff964cec69
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff964cecca
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9682cac5
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff968c464f
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffffc1339265
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff968453f6
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff968453fc
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9684c1a3
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9684c1e7
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9684c32f
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9684c48e
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00000000001a089b
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff97281075
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x000000000009f48c
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00000000000a070f
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x0000000000015d43
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff9680bed0
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5472290
+     0.00%     0.00%  nnmf-rs          [unknown]                         [k] 0xffffffff96811d95
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff97600e67
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5473055
+     0.00%     0.00%  nnmf-rs          libxcb.so.1.1.0                   [.] 0x00007a05c5266db7
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff975de6d4
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] recv
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e95bc4
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff964518d1
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e941e7
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965b510c
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c50a4bca
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e97ad4
+     0.00%     0.00%  nnmf-rs          [unknown]                         [.] 0xffffffff965af609
+     0.00%     0.00%  nnmf-rs          ld-linux-x86-64.so.2              [.] 0x00007a05c5467d43
+     0.00%     0.00%  nnmf-rs          libc.so.6                         [.] 0x00007a05c51a089b
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2e9f48c
+     0.00%     0.00%  nnmf-rs          libvulkan_lvp.so                  [.] 0x00007a05c2ea070f
